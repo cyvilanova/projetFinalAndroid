@@ -1,3 +1,21 @@
+/****************************************
+ Fichier: Product.java
+ Auteur: Cynthia Vilanova
+ Fonctionnalité: Code de l'objet Product
+ Date : 8-5-2019
+
+ Vérification :
+ Date               Nom                   Approuvé
+ =========================================================
+
+
+ Historique de modifications :
+ Date               Nom     Description
+ =========================================================
+ 8-5-2019           CV      Création
+
+ ****************************************/
+
 package com.example.quintessentiel.Product;
 
 /**

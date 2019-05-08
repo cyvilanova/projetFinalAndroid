@@ -13,7 +13,6 @@
  Date               Nom     Description
  =========================================================
  8-5-2019           CV      Création
-
  ****************************************/
 
 package com.example.quintessentiel.Product;
@@ -34,8 +33,13 @@ public class MgrProduct {
         this.products = new ArrayList<>();
     }
 
+    public void getAllProducts() {
+        String query = "SELECT * FROM product WHERE is_sellable = 1";
+    }
+
     /**
      * Gets the list of products
+     *
      * @return The list of products
      */
     public ArrayList<Product> getProducts() {
@@ -44,6 +48,7 @@ public class MgrProduct {
 
     /**
      * Sets the list of products
+     *
      * @param products The list of products
      */
     public void setProducts(ArrayList<Product> products) {

@@ -11,7 +11,7 @@
  =========================================================
  ****************************************/
 
-package com.example.quintessentiel;
+package com.example.quintessentiel.User;
 
 public class CtrlUser {
 

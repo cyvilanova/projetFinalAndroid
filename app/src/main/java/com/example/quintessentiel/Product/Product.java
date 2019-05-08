@@ -13,7 +13,6 @@
  Date               Nom     Description
  =========================================================
  8-5-2019           CV      Création
-
  ****************************************/
 
 package com.example.quintessentiel.Product;
@@ -30,10 +29,11 @@ public class Product {
 
     /**
      * Constructor of a product with parameters
-     * @param name
-     * @param description
-     * @param quantity
-     * @param price
+     *
+     * @param name The name of the product
+     * @param description The description of the product
+     * @param quantity The quantity in stock of the product
+     * @param price The price of the product
      */
     public Product(String name, String description, Integer quantity, Double price) {
         this.name = name;
@@ -44,6 +44,7 @@ public class Product {
 
     /**
      * Returns the id of the product
+     *
      * @return The id of the product
      */
     public Integer getId() {
@@ -52,6 +53,7 @@ public class Product {
 
     /**
      * Sets the id of the product
+     *
      * @param id The id of the product
      */
     public void setId(Integer id) {
@@ -60,6 +62,7 @@ public class Product {
 
     /**
      * Gets the name of the product
+     *
      * @return The name of the product
      */
     public String getName() {
@@ -68,6 +71,7 @@ public class Product {
 
     /**
      * Sets the name of the product
+     *
      * @param name The name of the product
      */
     public void setName(String name) {
@@ -76,6 +80,7 @@ public class Product {
 
     /**
      * Gets the description of the product
+     *
      * @return The description of the product
      */
     public String getDescription() {
@@ -84,6 +89,7 @@ public class Product {
 
     /**
      * Sets the description of the product
+     *
      * @param description The description of the product
      */
     public void setDescription(String description) {
@@ -92,6 +98,7 @@ public class Product {
 
     /**
      * Gets the quantity in stock of the product
+     *
      * @return The quantity in stock
      */
     public Integer getQuantity() {
@@ -100,6 +107,7 @@ public class Product {
 
     /**
      * Sets the quantity in stock of the product
+     *
      * @param quantity The new quantity in stock
      */
     public void setQuantity(Integer quantity) {
@@ -108,6 +116,7 @@ public class Product {
 
     /**
      * Gets the price of the product
+     *
      * @return The price of the product
      */
     public Double getPrice() {
@@ -116,6 +125,7 @@ public class Product {
 
     /**
      * Sets the price of the product
+     *
      * @param price The price of the product
      */
     public void setPrice(Double price) {

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+
+            <!-- Page title -->
+            <TextView
+                android:id="@+id/lblSignUpTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:text="@string/titleSignUp"
+                android:textSize="35sp"
+                android:textColor="@color/colorText"/>
+
+
+            <!-- Start of the body -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/lblSignUpUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:text="@string/lblUsername"
+                    android:layout_gravity="left"
+                    android:textSize="23sp"
+                    android:textColor="@color/colorText"/>
+
+                <EditText
+                    android:id="@+id/txtSignUpUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="@string/hintUsername"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="23sp"
+                    android:theme="@style/EditTextColorCustom"
+                    />
+
+                <TextView
+                    android:id="@+id/lblSignUpEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:text="@string/lblEmail"
+                    android:textSize="23sp"
+                    android:textColor="@color/colorText"/>
+
+                <EditText
+                    android:id="@+id/txtSignUpEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="@string/hintEmail"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="23sp"
+                    android:theme="@style/EditTextColorCustom"/>
+
+                <TextView
+                    android:id="@+id/lblSignUpPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:text="@string/lblPassword"
+                    android:textSize="23sp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorText"/>
+
+                <EditText
+                    android:id="@+id/txtSignUpPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="@string/hintPassword"
+                    android:inputType="textPassword"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="23sp"
+                    android:theme="@style/EditTextColorCustom"/>
+
+                <TextView
+                    android:id="@+id/lblSignUpPassConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:text="@string/lblConfirmPassword"
+                    android:textSize="23sp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorText"/>
+
+                <EditText
+                    android:id="@+id/txtSignUpPassConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="@string/hintPassword"
+                    android:inputType="textPassword"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="23sp"
+                    android:theme="@style/EditTextColorCustom"/>
+
+                <TextView
+                    android:id="@+id/lblSignUpQuestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:text="@string/lblSecQuestion"
+                    android:textSize="23sp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorText"/>
+
+                <Spinner
+                    android:id="@+id/spinnerSignUpQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/lblSignUpReponse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:text="@string/reponseSecQuestion"
+                    android:textSize="23sp"
+                    android:layout_gravity="left"
+                    android:textColor="@color/colorText"/>
+
+                <EditText
+                    android:id="@+id/txtSignUpReponse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="@string/hintSecQuestion"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="23sp"
+                    android:theme="@style/EditTextColorCustom"/>
+
+                <Button
+                    android:id="@+id/btnSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@color/colorButton"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="@string/btnSignUp"
+                    android:textColor="@color/colorText"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

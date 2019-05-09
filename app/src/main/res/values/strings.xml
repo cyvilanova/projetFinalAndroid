@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">Quintessentiel</string>
 
-    <!-- Connection page -->
+    <!-- Connection and signUp page -->
     <string name="titleConnection">Se connecter</string>
+    <string name="titleSignUp">Création de compte</string>
     <string name="lblUsername">Nom d\'utilisateur</string>
+    <string name="lblEmail">Adresse courriel</string>
     <string name="lblPassword">Mot de passe</string>
+    <string name="lblConfirmPassword">Confirmez le mot de passe</string>
     <string name="btnConnection">Connexion</string>
+    <string name="btnSignUp">Confirmer</string>
+    <string name="lblSecQuestion">Question de sécurité</string>
+    <string name="reponseSecQuestion">Réponse</string>
     <string name="hintUsername">Ex: Gazelle123</string>
     <string name="hintPassword">Ex: Abc123X</string>
+    <string name="hintEmail">Ex: lolipop3000@gmail.com</string>
+    <string name="hintSecQuestion">Ex: Un chat</string>
+
 </resources>

@@ -1,7 +1,28 @@
+/****************************************
+ Fichier: MgrOrder.java
+ Auteur: Catherine Bronsard
+ Fonctionnalité: Manager des commandes
+ Date : 8-4-2019
+
+ Vérification :
+ Date               Nom                   Approuvé
+ =========================================================
+
+
+ Historique de modifications :
+ Date               Nom     Description
+ =========================================================
+ 8-4-2019           CB      Création
+ ****************************************/
 package com.example.quintessentiel.Order;
 
+import com.example.quintessentiel.Product.MgrProduct;
+import com.example.quintessentiel.Product.Product;
+
+import java.util.ArrayList;
+
 public class MgrOrder {
-    //private MgrProduct mgrProduct;
+    private MgrProduct mgrProduct;
 
     /**
      * Insert a new order
@@ -18,7 +39,7 @@ public class MgrOrder {
      * @return order
      */
     public Order getInfoOrder(int id) {
-        Order order = new Order();
+        Order order = new Order(1, new ArrayList<Product>(), 1, 1, 1.00, 1.00);
 
         return order;
 
@@ -34,7 +55,7 @@ public class MgrOrder {
 
 
 
-    /*
+
     public MgrProduct getMgrProduct() {
         return mgrProduct;
     }
@@ -42,5 +63,5 @@ public class MgrOrder {
     public void setMgrProduct(MgrProduct mgrProduct) {
         this.mgrProduct = mgrProduct;
     }
-    */
+
 }

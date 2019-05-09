@@ -1,10 +1,29 @@
+/****************************************
+ Fichier: CtrlOrder.java
+ Auteur: Catherine Bronsard
+ Fonctionnalité: Contrôleur des commandes
+ Date : 8-4-2019
+
+ Vérification :
+ Date               Nom                   Approuvé
+ =========================================================
+
+
+ Historique de modifications :
+ Date               Nom     Description
+ =========================================================
+ 8-4-2019           CB      Création
+ ****************************************/
+
 package com.example.quintessentiel.Order;
+
+import com.example.quintessentiel.Product.*;
 
 import java.util.ArrayList;
 
 public class CtrlOrder {
     private MgrOrder mgrOrder;
-    //private MgrProduct mgrProduct;
+    private MgrProduct mgrProduct;
 
     /**
      * Returns all the orders in the database
@@ -22,10 +41,18 @@ public class CtrlOrder {
 
     }
 
+    /**
+     *
+     * @param order
+     */
     public void editOrder(Order order) {
 
     }
 
+    /**
+     *
+     * @param order
+     */
     public void deleteOrder(Order order) {
 
     }
@@ -38,7 +65,7 @@ public class CtrlOrder {
     public void setMgrOrder(MgrOrder mgrOrder) {
         this.mgrOrder = mgrOrder;
     }
-/*
+
     public MgrProduct getMgrProduct() {
         return mgrProduct;
     }
@@ -46,5 +73,4 @@ public class CtrlOrder {
     public void setMgrProduct(MgrProduct mgrProduct) {
         this.mgrProduct = mgrProduct;
     }
-    */
 }

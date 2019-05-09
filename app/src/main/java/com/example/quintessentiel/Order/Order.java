@@ -1,13 +1,52 @@
+/****************************************
+ Fichier: Order.java
+ Auteur: Catherine Bronsard
+ Fonctionnalité: Commande
+ Date : 8-4-2019
+
+ Vérification :
+ Date               Nom                   Approuvé
+ =========================================================
+
+
+ Historique de modifications :
+ Date               Nom     Description
+ =========================================================
+ 8-4-2019           CB      Création
+ ****************************************/
 package com.example.quintessentiel.Order;
+
+import com.example.quintessentiel.Product.*;
+
+import java.util.ArrayList;
 
 public class Order{
     private int id;
     private int idState;
-    //private ArrayList<Product> products;
+    private ArrayList<Product> products;
     private int idUser;
     private int idMethod;
     private double tps;
     private double tvq;
+
+    public Order(int id, int idState, ArrayList<Product> products, int idUser, int idMethod, double tps, double tvq) {
+        this.id = id;
+        this.idState = idState;
+        this.products = products;
+        this.idUser = idUser;
+        this.idMethod = idMethod;
+        this.tps = tps;
+        this.tvq = tvq;
+    }
+
+    public Order(int idState, ArrayList<Product> products, int idUser, int idMethod, double tps, double tvq) {
+        this.idState = idState;
+        this.products = products;
+        this.idUser = idUser;
+        this.idMethod = idMethod;
+        this.tps = tps;
+        this.tvq = tvq;
+    }
 
     /* Getteurs/Setteurs */
     public int getId() {
@@ -25,7 +64,7 @@ public class Order{
     public void setIdState(int idState) {
         this.idState = idState;
     }
-/*
+
     public ArrayList<Product> getProducts() {
         return products;
     }
@@ -33,7 +72,7 @@ public class Order{
     public void setProducts(ArrayList<Product> products) {
         this.products = products;
     }
-*/
+
     public int getIdUser() {
         return idUser;
     }

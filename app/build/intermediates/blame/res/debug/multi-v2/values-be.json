@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\Quintessentiel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
+            "outputFile": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\fb0bfef75b45a0c0fbd299764463c160\\res\\values-be\\values-be.xml",

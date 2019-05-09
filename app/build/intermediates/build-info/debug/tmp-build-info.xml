@@ -6,25 +6,21 @@
     density="420dpi"
     format="10"
     plugin-version="3.3.2"
-    timestamp="1557327967478"
-    token="-1887107369704931968"
+    timestamp="1557363022930"
+    token="7603421708577701995"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="12105" />
+        duration="99" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="4683" />
+        duration="2" />
     <task
         name="verifier"
-        duration="1827" />
-
-    <artifact
-        location="D:\Cegep\Session 4\android\projetFinalAndroid\Quintessentiel\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-        type="SPLIT" />
+        duration="0" />
 
 </instant-run>

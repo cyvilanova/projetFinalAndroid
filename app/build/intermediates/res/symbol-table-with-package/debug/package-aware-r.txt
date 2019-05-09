@@ -679,6 +679,7 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
+id cancel
 id center
 id center_horizontal
 id center_vertical
@@ -692,11 +693,13 @@ id content
 id contentPanel
 id custom
 id customPanel
+id date
 id decor_content_parent
 id default_activity_button
 id dimensions
 id direct
 id disableHome
+id edit
 id edit_query
 id end
 id expand_activities_button
@@ -720,12 +723,14 @@ id italic
 id left
 id line1
 id line3
+id list_order
 id listMode
 id list_item
 id message
 id middle
 id multiply
 id never
+id no_order
 id none
 id normal
 id notification_background
@@ -735,6 +740,10 @@ id packed
 id parent
 id parentPanel
 id percent
+id product_image
+id product_name
+id product_price
+id product_qty
 id progress_circular
 id progress_horizontal
 id radio
@@ -760,6 +769,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id sous_tptal
 id spacer
 id split_action_bar
 id spread
@@ -769,12 +779,14 @@ id src_in
 id src_over
 id standard
 id start
+id state_order
 id submenuarrow
 id submit_area
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id taxes
 id text
 id text2
 id textSpacerNoButtons
@@ -785,6 +797,7 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id total
 id uniform
 id up
 id useLogo
@@ -831,6 +844,8 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout order_products_rows
+layout order_rows
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

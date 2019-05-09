@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\Quintessentiel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-af\\values-af.xml",
+            "outputFile": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-af\\values-af.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\values-af\\values-af.xml",

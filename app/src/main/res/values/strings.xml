@@ -11,7 +11,7 @@
     <string name="btnConnection">Connexion</string>
     <string name="btnSignUp">Confirmer</string>
     <string name="lblSecQuestion">Question de sécurité</string>
-    <string name="reponseSecQuestion">Réponse</string>
+    <string name="responseSecQuestion">Réponse</string>
     <string name="hintUsername">Ex: Gazelle123</string>
     <string name="hintPassword">Ex: Abc123X</string>
     <string name="hintEmail">Ex: lolipop3000@gmail.com</string>

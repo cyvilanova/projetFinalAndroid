@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             >
@@ -45,7 +45,7 @@
                     android:id="@+id/lblUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
+                    android:layout_gravity="start"
                     android:text="@string/lblUsername"
                     android:textSize="23sp"
                     android:textColor="@color/colorText"/>
@@ -66,13 +66,14 @@
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
                     android:theme="@style/EditTextColorCustom"
+                    android:textColorHint="@color/hintColor"
                     />
 
                 <TextView
                     android:id="@+id/lblPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
+                    android:layout_gravity="start"
                     android:layout_marginTop="40sp"
                     android:text="@string/lblPassword"
                     android:textSize="23sp"
@@ -94,7 +95,8 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
-                    android:theme="@style/EditTextColorCustom"/>
+                    android:theme="@style/EditTextColorCustom"
+                    android:textColorHint="@color/hintColor"/>
 
 
                 <Button

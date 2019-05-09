@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_up);
+        setContentView(R.layout.connection);
 
         /* Lines to use when we no longer need an icon from the menu
         ImageView t = findViewById(R.id.toolBarLeftBlockImage);

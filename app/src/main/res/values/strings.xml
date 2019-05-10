@@ -17,4 +17,10 @@
     <string name="hintEmail">Ex: lolipop3000@gmail.com</string>
     <string name="hintSecQuestion">Ex: Un chat</string>
 
+
+    <!-- -->
+    <string name="itemCatalog">Catalogue</string>
+    <string name="itemCart">Mon panier</string>
+    <string name="itemPersonalisedRecipe">Recette personalisée</string>
+    <string name="itemNotification">Notifications</string>
 </resources>

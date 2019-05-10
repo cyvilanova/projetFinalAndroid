@@ -18,6 +18,7 @@ package com.example.quintessentiel;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,19 +39,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.show_orders);
 
         ArrayList<Order> orders = new ArrayList<>();
-        ArrayList<Product> pro = new ArrayList<>();
+        ArrayList<Product> pro1 = new ArrayList<>();
+        ArrayList<Product> pro2 = new ArrayList<>();
 
-        Product p1 = new Product("nom", "description", 6, 15.00);
-        Product p2 = new Product("nom", "description", 6, 15.00);
+        Product p1 = new Product("POUR ORDER 1", "description1", 42, 15.00);
+        p1.setId(1);
+        Product p12 = new Product("POUR ORDER 1-2", "description1-2", 421, 115.00);
+        p12.setId(2);
+        Product p2 = new Product("POUR ORDER 2", "description2", 69, 13444.00);
+        p2.setId(3);
 
-        Order order1 = new Order(1,1, pro,1, 1, 0.00, 0.00);
-        Order order2 = new Order(2, 2, pro,1, 1, 0.00, 0.00);
 
-        pro.add(p1);
-        pro.add(p2);
 
-        order1.setProducts(pro);
-        order2.setProducts(pro);
+        pro1.add(p1);
+        pro1.add(p12);
+        pro2.add(p2);
+
+        Order order1 = new Order(1,1, pro1,1, 1, 0.00, 0.00);
+        Order order2 = new Order(2, 2, pro2,1, 1, 0.00, 0.00);
+
 
         orders.add(order1);
         orders.add(order2);
@@ -86,20 +93,27 @@ public class MainActivity extends AppCompatActivity {
             TextView total = row.findViewById(R.id.total);
 
             date.setText("date");
-            no_order.setText(Integer.toString(orders.get(position).getId()));
+            no_order.setText("No : " + Integer.toString(orders.get(position).getId()));
             state_order.setText(Integer.toString(orders.get(position).getIdState()));
             sous_total.setText("SOUS TOTAL");
             taxes.setText("TAXES");
             total.setText("TOTAL");
 
+            ListView listView = row.findViewById(R.id.list_order);
+
+            for (int i = 0; i < orders.get(position).getProducts().size(); i++) {
+                ArrayList<Product> pro = new ArrayList<>();
+                pro.add(orders.get(position).getProducts().get(i));
+                ProductAdapter productAdapter = new ProductAdapter(context, pro);
+            }
+
             ProductAdapter productAdapter = new ProductAdapter(context, orders.get(position).getProducts());
 
-            ListView listView = row.findViewById(R.id.list_order);
-            listView.setAdapter(productAdapter);
 
+            listView.setAdapter(productAdapter);
+            justifyListViewHeightBasedOnChildren(listView);
             return row;
         }
-
 
 
         class ProductAdapter extends ArrayAdapter<Product> {
@@ -125,13 +139,37 @@ public class MainActivity extends AppCompatActivity {
                 TextView product_qty = row.findViewById(R.id.product_qty);
                 TextView product_price = row.findViewById(R.id.product_price);
 
-                imageView.setImageResource(R.drawable.photodefault);
+                int path = getResources().getIdentifier("img" + products.get(position).getId(), "drawable", getPackageName());
+
+                imageView.setImageResource(path);
                 product_name.setText(products.get(position).getName());
                 product_qty.setText(Integer.toString(products.get(position).getQuantity()));
                 product_price.setText(Double.toString(products.get(position).getPrice()));
 
+
+
                 return row;
             }
+        }
+        public void justifyListViewHeightBasedOnChildren (ListView listView) {
+
+            ListAdapter adapter = listView.getAdapter();
+
+            if (adapter == null) {
+                return;
+            }
+            ViewGroup vg = listView;
+            int totalHeight = 0;
+            for (int i = 0; i < adapter.getCount(); i++) {
+                View listItem = adapter.getView(i, null, vg);
+                listItem.measure(0, 0);
+                totalHeight += listItem.getMeasuredHeight();
+            }
+
+            ViewGroup.LayoutParams par = listView.getLayoutParams();
+            par.height = totalHeight + (listView.getDividerHeight() * (adapter.getCount() - 1));
+            listView.setLayoutParams(par);
+            listView.requestLayout();
         }
     }
 }

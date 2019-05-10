@@ -344,6 +344,10 @@
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img5.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img5.jpg"
+    },
+    {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\fb0bfef75b45a0c0fbd299764463c160\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
@@ -354,6 +358,10 @@
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img10.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img10.jpg"
     },
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -484,6 +492,10 @@
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img6.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img6.jpg"
+    },
+    {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xxhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
@@ -522,6 +534,10 @@
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img7.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img7.jpg"
     },
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -600,6 +616,10 @@
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img8.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img8.jpg"
+    },
+    {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\fb0bfef75b45a0c0fbd299764463c160\\res\\layout\\notification_template_part_time.xml"
     },
@@ -674,6 +694,10 @@
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img9.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img9.jpg"
     },
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_background_transition_holo_dark.xml.flat",
@@ -1044,6 +1068,10 @@
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img11.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img11.jpg"
+    },
+    {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\fb0bfef75b45a0c0fbd299764463c160\\res\\drawable\\notification_tile_bg.xml"
     },
@@ -1126,6 +1154,10 @@
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_search_url_text.xml.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img16.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img16.jpg"
     },
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_material.xml.flat",
@@ -1216,6 +1248,14 @@
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img4.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img4.jpg"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img15.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img15.jpg"
+    },
+    {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -1266,6 +1306,10 @@
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_borderless_material.xml.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img3.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img3.jpg"
     },
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
@@ -1372,6 +1416,10 @@
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img14.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img14.jpg"
+    },
+    {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
@@ -1386,6 +1434,10 @@
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img1.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img1.jpg"
     },
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -1450,6 +1502,10 @@
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img12.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img12.jpg"
     },
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -1536,6 +1592,10 @@
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img13.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img13.jpg"
+    },
+    {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
@@ -1574,6 +1634,10 @@
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img2.jpg.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\drawable\\img2.jpg"
     },
     {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",

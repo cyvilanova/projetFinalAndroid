@@ -6,7 +6,10 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/projetFinalAndroid.iml" filepath="$PROJECT_DIR$/projetFinalAndroid.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/projetFinalAndroid.iml" filepath="$PROJECT_DIR$/projetFinalAndroid.iml" />
+=======
+>>>>>>> master
     </modules>
   </component>
 </project>

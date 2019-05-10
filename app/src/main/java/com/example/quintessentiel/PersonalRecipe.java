@@ -1,4 +1,4 @@
 package com.example.quintessentiel;
 
-public class mgrConnection {
+public class PersonalRecipe {
 }

@@ -1,22 +1,39 @@
 package com.example.quintessentiel;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
+
+import com.example.quintessentiel.Product.MgrProduct;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    Button btnTest;
+    MgrProduct mgrProduct = new MgrProduct();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.connection);
+        setContentView(R.layout.activity_main);
+        btnTest = (Button) findViewById(R.id.btnTest);
+        btnTest.setOnClickListener(new View.OnClickListener() {
 
-        /* Lines to use when we no longer need an icon from the menu
-        ImageView t = findViewById(R.id.toolBarLeftBlockImage);
-        t.setVisibility(View.INVISIBLE);
-        */
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                testBd();
+            }
+        });
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void testBd() {
+        mgrProduct.getProductById(1);
+        mgrProduct.insertProduct();
+    }
+
 }

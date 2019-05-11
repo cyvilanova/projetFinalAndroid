@@ -112,8 +112,6 @@ public class HttpPostRequest {
         String resultFromThread = null;
         try {
             resultFromThread = (String) completableFuture.get();
-            Log.d("RESULT resultFromThread", "" + resultFromThread.getClass());
-            Log.d("RESULT resultFromThread", "" + resultFromThread);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

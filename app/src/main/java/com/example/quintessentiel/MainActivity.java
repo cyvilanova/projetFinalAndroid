@@ -1,5 +1,6 @@
 package com.example.quintessentiel;
 
+
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,17 +12,43 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.widget.Button;
+import com.example.quintessentiel.Product.MgrProduct;
+
 
 public class MainActivity extends AppCompatActivity {
 
-
+    //Side bar
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
+
+    //Test code
+    private Button btnTest;
+    private MgrProduct mgrProduct = new MgrProduct();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.connection);
+        setContentView(R.layout.activity_main);
 
+        //Test code
+        btnTest = (Button) findViewById(R.id.btnTest);
+
+        btnTest.setOnClickListener(new View.OnClickListener() {
+
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                testBd();
+            }
+        });
+
+
+        /**
+        //Side bar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -45,17 +72,40 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        // NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        // navigationView.setNavigationItemSelectedListener(this);
 
-    /*
-        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigationDrawerOpen,R.string.navigationDrawerClose);
-        drawer.addDrawerListener(toggle);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-     */
+        **/
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void testBd() {
+        mgrProduct.getProductById(1);
+        mgrProduct.insertProduct();
+    }
+
+}
+/**
+
+
+
+
+
+
+    public class MainActivity extends AppCompatActivity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            btnTest.setOnClickListener(new View.OnClickListener() {
+
+                @RequiresApi(api = Build.VERSION_CODES.N)
+                @Override
+                public void onClick(View v) {
+                    testBd();
+                }
+            });
+        }
 
 
 
     }
-}
+**/

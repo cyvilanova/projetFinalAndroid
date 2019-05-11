@@ -1,24 +1,18 @@
-/****************************************
- Fichier: Product.java
- Auteur: Cynthia Vilanova
- Fonctionnalité: Code de l'objet Product
- Date : 8-5-2019
-
- Vérification :
- Date               Nom                   Approuvé
- =========================================================
-
-
- Historique de modifications :
- Date               Nom     Description
- =========================================================
- 8-5-2019           CV      Création
- ****************************************/
-
 package com.example.quintessentiel.Product;
 
 /**
- * Object containing the information of a product
+ * Fichier: Product.java
+ * Auteur: Cynthia Vilanova
+ * Fonctionnalité: Object containing the information of a product
+ * Date : 8-5-2019
+ *
+ * Vérification :
+ * Date               Nom                   Approuvé
+ *
+ * Historique de modifications :
+ * Date               Nom     Description
+ * 8-5-2019           CV      Création
+ * 10-5-2019          CV      Ajout ImagePath
  */
 public class Product {
     private Integer id; // The id of the product
@@ -26,20 +20,23 @@ public class Product {
     private String description; // The description of the product
     private Integer quantity; // The quantity in stock of the product
     private Double price; // The price of the product
+    private String imagePath; // The image path of the product
 
     /**
      * Constructor of a product with parameters
      *
-     * @param name The name of the product
+     * @param name        The name of the product
      * @param description The description of the product
-     * @param quantity The quantity in stock of the product
-     * @param price The price of the product
+     * @param quantity    The quantity in stock of the product
+     * @param price       The price of the product
+     * @param imagePath   The image path of the product
      */
-    public Product(String name, String description, Integer quantity, Double price) {
+    public Product(String name, String description, Double price, Integer quantity, String imagePath) {
         this.name = name;
         this.description = description;
         this.quantity = quantity;
         this.price = price;
+        this.imagePath = imagePath;
     }
 
     /**
@@ -130,5 +127,23 @@ public class Product {
      */
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    /**
+     * Gets the image path of the product
+     *
+     * @return The image path of the product
+     */
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    /**
+     * Sets the image path of the product
+     *
+     * @param imagePath The image path of the product
+     */
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

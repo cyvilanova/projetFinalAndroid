@@ -18,9 +18,12 @@
     <string name="hintSecQuestion">Ex: Un chat</string>
 
 
-    <!-- -->
+    <!-- Menu -->
+    <string name="welcomeName">Bonjour Johanne74 !</string>
     <string name="itemCatalog">Catalogue</string>
     <string name="itemCart">Mon panier</string>
     <string name="itemPersonalisedRecipe">Recette personalisée</string>
     <string name="itemNotification">Notifications</string>
+    <string name="itemLogOut">Déconnexion</string>
+
 </resources>

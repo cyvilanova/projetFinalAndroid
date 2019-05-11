@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.connection);
+        /**
         //Test code
         btnTest = (Button) findViewById(R.id.btnTest);
 
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 testBd();
             }
         });
+        **/
 
 
-        /**
         //Side bar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        **/
+
     }
 
 

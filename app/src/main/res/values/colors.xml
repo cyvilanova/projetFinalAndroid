@@ -13,4 +13,5 @@
     <color name="cursorColor">#342c2c</color>
     <color name="colorBorder">#919191</color>
     <color name="toolBarBackground">#FFF6C9</color>
+    <color name="darkSideBarBackground">#E8E0B7</color>
 </resources>

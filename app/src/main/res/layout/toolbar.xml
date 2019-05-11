@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/toolBarBackground"
+    android:elevation="4dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <!-- Arrow -->
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/toolBarLeftBlock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/toolBarLeftBlockImage"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/back_arrow" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <!-- Logo -->
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/toolBarMiddleBlock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/toolBarMiddleBlockImage"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/logo" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <!-- Menu -->
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/toolBarRightBlock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/toolBarRightBlockImage"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_menu" />
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+</android.support.v7.widget.Toolbar>

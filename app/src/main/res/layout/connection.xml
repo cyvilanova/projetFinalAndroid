@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+
+            <TextView
+                android:id="@+id/titleConnection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/titleConnection"
+                android:textSize="35dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/lblUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_horizontal|left"
+                    android:text="@string/lblUsername"
+                    android:textSize="23dp" />
+
+                <EditText
+                    android:id="@+id/txtUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="@string/hintUsername"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="3px"
+                    android:paddingTop="5dp"
+                    android:paddingRight="3px"
+                    android:paddingBottom="5dp"
+                    android:textSize="23dp" />
+
+                <TextView
+                    android:id="@+id/lblPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|left"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/lblPassword"
+                    android:textSize="23dp" />
+
+
+                <EditText
+                    android:id="@+id/txtPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="@string/hintPassword"
+                    android:inputType="textPassword"
+                    android:paddingLeft="3px"
+                    android:paddingTop="5dp"
+                    android:paddingRight="3px"
+                    android:paddingBottom="5dp"
+                    android:textSize="23dp" />
+
+
+                <Button
+                    android:id="@+id/btnConnection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/colorButton"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="@string/btnConnection"
+                    android:textColor="@color/colorTextButton" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

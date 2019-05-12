@@ -23,9 +23,6 @@ import com.example.quintessentiel.Product.MgrProduct;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Side bar
-    private DrawerLayout drawer;
-    private ActionBarDrawerToggle toggle;
 
     //Test code
     private Button btnTest;
@@ -64,12 +61,14 @@ public class MainActivity extends AppCompatActivity {
 
 
                 View view = getCurrentFocus();
+
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-
-
+                view.clearFocus(); //The parent of this elements needs to be focusable
             }
         });
+
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.bringToFront();
@@ -78,13 +77,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 System.out.println(menuItem);
                 return false;
-            }
-        });
-
-        findViewById(R.id.btnLogOut).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("Login out...");
             }
         });
 

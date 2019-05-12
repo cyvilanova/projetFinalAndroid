@@ -14,7 +14,11 @@
         android:layout_height="match_parent"
         android:layout_gravity="end"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer"
+        android:background="@color/lightSideBar"
+        app:itemTextColor="@color/colorText"
+        app:itemIconTint="@color/colorText"
+        />
 
     <ScrollView
         android:layout_width="match_parent"

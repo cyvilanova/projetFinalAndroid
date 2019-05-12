@@ -6,10 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
 
     <style name="EditTextColorCustom" parent="TextAppearance.AppCompat">
         <item name="colorAccent">@color/cursorColor</item>
     </style>
+
+
 </resources>

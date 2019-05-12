@@ -8,4 +8,10 @@
     <string name="btnConnection">Connexion</string>
     <string name="hintUsername">Ex: Gazelle123</string>
     <string name="hintPassword">Ex: Abc123X</string>
+
+    <!-- Personal recipe page 1-->
+    <string name="titlePersonalRecipe">Veuillez remplir le formulaire suivant afin de commander un produit 100% personalisé.</string>
+    <string name="lblAge">Age:</string>
+    <string name="lblSkinType">Type de peau:</string>
+    <string name="lblWorkplaceEnvironment">Envrionnement de travail</string>
 </resources>

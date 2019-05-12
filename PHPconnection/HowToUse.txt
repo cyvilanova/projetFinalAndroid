@@ -1,0 +1,5 @@
+Copier le dossier AndroidApp et le coller dans le dossier htdocs de XAMPP.
+
+Dans le fichier Constants.java du projet Android, 
+changer la constante SERVER_IP pour l'adresse iPV4 du serveur sur lequel Apache roule 
+(ipconfig dans la command line pour la trouver).

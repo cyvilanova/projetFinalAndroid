@@ -10,4 +10,8 @@
     <color name="colorTextButton">#FFFFFF</color>
     <color name="colorBorder">#919191</color>
     <color name="toolBarBackground">#FFF6C9</color>
+
+
+    <color name="buttonBrown">#342c2c</color>
+
 </resources>

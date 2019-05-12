@@ -1,6 +1,8 @@
 package com.example.quintessentiel;
 
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import com.example.quintessentiel.Product.MgrProduct;
 
@@ -58,7 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 // open right drawer
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.openDrawer(GravityCompat.END);
-                System.out.println("OPENING");
+
+
+                View view = getCurrentFocus();
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
 
             }
         });
@@ -72,6 +80,17 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        findViewById(R.id.btnLogOut).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Login out...");
+            }
+        });
+
+
+
+
 
 
     }

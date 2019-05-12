@@ -17,8 +17,26 @@
         app:menu="@menu/activity_main_drawer"
         android:background="@color/lightSideBar"
         app:itemTextColor="@color/colorText"
-        app:itemIconTint="@color/colorText"
-        />
+        app:itemIconTint="@color/colorText">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center">
+            <Button
+                android:id="@+id/btnLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnLogOut"
+                android:background="@color/darkSideBarBackground"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorText"
+                />
+        </RelativeLayout>
+
+    </android.support.design.widget.NavigationView>
 
     <ScrollView
         android:layout_width="match_parent"

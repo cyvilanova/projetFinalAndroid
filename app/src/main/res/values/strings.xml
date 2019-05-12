@@ -24,6 +24,6 @@
     <string name="itemCart">Mon panier</string>
     <string name="itemPersonalisedRecipe">Recette personalisée</string>
     <string name="itemNotification">Notifications</string>
-    <string name="itemLogOut">Déconnexion</string>
+    <string name="btnLogOut">Déconnexion</string>
 
 </resources>

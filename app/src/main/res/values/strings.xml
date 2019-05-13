@@ -16,7 +16,8 @@
     <string name="hintPassword">Ex: Abc123X</string>
     <string name="hintEmail">Ex: lolipop3000@gmail.com</string>
     <string name="hintSecQuestion">Ex: Un chat</string>
-
+    <string name="btnCreateAccount">Crée un compte</string>
+    <string name="btnConnectAccount">Se connecter</string>
 
     <!-- Menu -->
     <string name="welcomeName">Bonjour Johanne74 !</string>

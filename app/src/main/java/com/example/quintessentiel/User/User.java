@@ -16,16 +16,14 @@ package com.example.quintessentiel.User;
 public class User {
     private Integer IdUser;
     private String name;
-    private Integer phoneNumber;
     private String email;
     private String password;
     private String secretResponse;
     private Integer idSecretQuestion;
 
 
-    public User(String name,Integer phoneNumber, String email,String password,String secretResponse,Integer idSecretQuestion){
+    public User(String name, String email,String password,String secretResponse,Integer idSecretQuestion){
         this.name = name;
-        this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
         this.secretResponse = secretResponse;
@@ -63,22 +61,6 @@ public class User {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * Gets the user's phone number
-     * @return the user's phone number
-     */
-    public Integer getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    /**
-     * Sets the user's phone number
-     * @param phoneNumber
-     */
-    public void setPhoneNumber(Integer phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     /**

@@ -1,13 +1,13 @@
 package com.example.quintessentiel;
 
 
-import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,11 +19,14 @@ import android.support.annotation.RequiresApi;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import com.example.quintessentiel.Product.MgrProduct;
+import com.example.quintessentiel.User.CtrlUser;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
+
+    private SharedPreferences prefs;
     //Test code
     private Button btnTest;
     private MgrProduct mgrProduct = new MgrProduct();
@@ -32,9 +35,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.connection);
-        /**
+        setContentView(R.layout.activity_main);
+
+        SignUpActivity sa = new SignUpActivity();
+        Intent intent = new Intent(MainActivity.this,sa.getClass());
+        MainActivity.this.startActivity(intent);
         //Test code
+        /**
         btnTest = (Button) findViewById(R.id.btnTest);
 
         btnTest.setOnClickListener(new View.OnClickListener() {
@@ -45,8 +52,17 @@ public class MainActivity extends AppCompatActivity {
                 testBd();
             }
         });
-        **/
 
+
+        CtrlUser ctrluser = new CtrlUser(this);
+        ctrluser.checkCredentials("David","abc123");
+        //ctrluser.createUser("hule","quebeccoisepic@gmail.com","abc123","abc123","gros roux",1);
+        System.out.println("USER CONNECTED");
+
+
+        prefs = getApplicationContext().getSharedPreferences("UserPref", 0); // 0 - for private mode
+
+        System.out.println(prefs.getAll());
 
         //Side bar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -80,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+         **/
 
 
 

@@ -13,27 +13,48 @@
 
 package com.example.quintessentiel.User;
 
+import android.content.Context;
+
+import java.util.ArrayList;
+
 public class CtrlUser {
 
     private MgrUser mgrUser;
 
-    public CtrlUser(){
-        this.setMgrUser(new MgrUser());
+    public CtrlUser(Context ctx){
+        this.setMgrUser(new MgrUser(ctx));
     }
 
     /**
      * Creates a user with the given infos and calls the manager to add it to the db
      * @param name
-     * @param phoneNumber
      * @param email
      * @param password
      * @param secretResponse
      * @param idSecretQuestion
      */
-    public void createUser(String name,Integer phoneNumber, String email,String password,String secretResponse,Integer idSecretQuestion){
-        User newUser = new User(name,phoneNumber,email,password,secretResponse,idSecretQuestion);
-        this.getMgrUser().addUser(newUser);
+    public void createUser(String name, String email,String password,String secretResponse,Integer idSecretQuestion){
+
+        User newUser = new User(name,email,password,secretResponse,idSecretQuestion);
+
+        if(this.getMgrUser().addUser(newUser)){
+            System.out.println("Registered successfully!");
+        }
+        else{
+            System.out.println("Username already exists!");
+        }
+
     }
+
+    /**
+     * Checks if the user is already connected
+     * in the db
+     */
+    public boolean checkIfConnected(){
+        return this.mgrUser.checkIfConnected();
+    }
+
+
 
     /**
      * Checks if the given credentials match a user
@@ -41,17 +62,16 @@ public class CtrlUser {
      * @param name
      * @param password
      */
-    public void checkCredentials(String name,String password){
-        Integer userId = 0;
+    public boolean checkCredentials(String name, String password){
+        return this.getMgrUser().checkCredentials(name,password);
+    }
 
-        userId = this.getMgrUser().checkCredentials(name,password);
-
-        if(userId.equals(0)){
-            //Invalid user credentials
-        }
-        else{
-            //User is valid
-        }
+    /**
+     * Gets the security questions from the db
+     * @return the security questions in a list
+     */
+    public ArrayList<Question> getSecurityQuestions(){
+        return this.getMgrUser().getSecurityQuestions();
     }
 
 

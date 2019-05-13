@@ -10,16 +10,15 @@ import android.widget.Button;
 import com.example.quintessentiel.Product.MgrProduct;
 
 
-public class MainActivity extends AppCompatActivity {
+public class CatalogActivity extends AppCompatActivity {
 
-    Button btnTest;
     MgrProduct mgrProduct = new MgrProduct();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.catalog_product);
-        }
+        setContentView(R.layout.catalog);
+    }
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)

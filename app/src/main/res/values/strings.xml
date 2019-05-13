@@ -14,4 +14,19 @@
     <string name="lblAge">Age:</string>
     <string name="lblSkinType">Type de peau:</string>
     <string name="lblWorkplaceEnvironment">Envrionnement de travail</string>
+
+    <!-- Catalog Page -->
+    <string name="txtCategory">Catégorie : </string>
+    <string-array name="spinnerCategoryName">
+        <item>category1</item>
+        <item>category2</item>
+        <item>category3</item>
+        <item>category4</item>
+    </string-array>
+    <string name="txtProductTitle">Product Title PlaceHolder</string>
+    <string name="lblProductPrice">Prix: </string>
+    <string name="txtPrice">itemPrice</string>
+    <string name="txtProductDescription">Product Description PlaceHolder</string>
+    <string name="txtProductState">product State PlaceHolder</string>
+    <string name="txtButtonProductAddCart">Ajouter au panier</string>
 </resources>

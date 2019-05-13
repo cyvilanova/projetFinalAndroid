@@ -33,17 +33,11 @@ public class CtrlUser {
      * @param secretResponse
      * @param idSecretQuestion
      */
-    public void createUser(String name, String email,String password,String secretResponse,Integer idSecretQuestion){
+    public boolean createUser(String name, String email,String password,String secretResponse,Integer idSecretQuestion){
 
         User newUser = new User(name,email,password,secretResponse,idSecretQuestion);
 
-        if(this.getMgrUser().addUser(newUser)){
-            System.out.println("Registered successfully!");
-        }
-        else{
-            System.out.println("Username already exists!");
-        }
-
+        return this.mgrUser.addUser(newUser);
     }
 
     /**

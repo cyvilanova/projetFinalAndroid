@@ -34,10 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        SignUpActivity sa = new SignUpActivity();
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.connection);
+
+        prefs = this.getSharedPreferences("UserPref", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.clear().commit();
+
+        ConnectionActivity sa = new ConnectionActivity();
         Intent intent = new Intent(MainActivity.this,sa.getClass());
         MainActivity.this.startActivity(intent);
         //Test code
@@ -64,40 +69,9 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println(prefs.getAll());
 
-        //Side bar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        findViewById(R.id.drawer_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // open right drawer
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                drawer.openDrawer(GravityCompat.END);
-
-
-                View view = getCurrentFocus();
-
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                view.clearFocus(); //The parent of this elements needs to be focusable
-            }
-        });
-
-
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.bringToFront();
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                System.out.println(menuItem);
-                return false;
-            }
-        });
 
          **/
-
 
 
 

@@ -1,10 +1,18 @@
 package com.example.quintessentiel;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -54,12 +62,15 @@ public class SignUpActivity extends AppCompatActivity {
                 else{
 
                     if(passwordVal.equals(confirmPasswordVal)){
-                        ctrlUser.createUser(usernameVal,emailVal,passwordVal,securityAnswerVal,securityQuestionVal);
 
-                        ConnectionActivity ca = new ConnectionActivity();
+                        if(ctrlUser.createUser(usernameVal,emailVal,passwordVal,securityAnswerVal,securityQuestionVal))
+                        {
+                            loadConnectionPage();
+                        }
+                        else{
+                            System.out.println("didnt work");
+                        }
 
-                        Intent intent = new Intent(SignUpActivity.this,ca.getClass());
-                        SignUpActivity.this.startActivity(intent);
 
                     }
                     else{   //Passwords not matching
@@ -68,6 +79,54 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
+
+        findViewById(R.id.btnToConnection).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadConnectionPage();
+            }
+        });
+
+        findViewById(R.id.toolBarLeftBlockImage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+        //Side bar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        findViewById(R.id.drawer_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // open right drawer
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.openDrawer(GravityCompat.END);
+
+
+                View view = getCurrentFocus();
+
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                view.clearFocus(); //The parent of this elements needs to be focusable
+            }
+        });
+
+
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                System.out.println(menuItem);
+                return false;
+            }
+        });
+
     }
 
     public void populateSecurityQuestions(){
@@ -78,5 +137,12 @@ public class SignUpActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerSecurityQuestion.setAdapter(adapter);
+    }
+
+    public void loadConnectionPage(){
+        ConnectionActivity ca = new ConnectionActivity();
+
+        Intent intent = new Intent(SignUpActivity.this,ca.getClass());
+        SignUpActivity.this.startActivity(intent);
     }
 }

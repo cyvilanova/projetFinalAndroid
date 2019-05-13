@@ -3,14 +3,7 @@ package com.example.quintessentiel;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
@@ -22,7 +15,7 @@ import com.example.quintessentiel.User.Question;
 
 import java.util.ArrayList;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends BaseActivity {
 
     private CtrlUser ctrlUser;
 
@@ -30,6 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
+        super.onCreateDrawer();
 
         ctrlUser = new CtrlUser(this);
         populateSecurityQuestions();
@@ -93,40 +87,6 @@ public class SignUpActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
-        //Side bar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        findViewById(R.id.drawer_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // open right drawer
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                drawer.openDrawer(GravityCompat.END);
-
-
-                View view = getCurrentFocus();
-
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                view.clearFocus(); //The parent of this elements needs to be focusable
-            }
-        });
-
-
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.bringToFront();
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                System.out.println(menuItem);
-                return false;
-            }
-        });
-
     }
 
     public void populateSecurityQuestions(){

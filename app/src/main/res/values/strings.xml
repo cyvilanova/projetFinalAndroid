@@ -8,4 +8,9 @@
     <string name="btnConnection">Connexion</string>
     <string name="hintUsername">Ex: Gazelle123</string>
     <string name="hintPassword">Ex: Abc123X</string>
+
+    <!-- Commandes -->
+    <string name="cart_cancel_button">Supprimer</string>
+    <string name="cancel_order_btn">Annuler la commande</string>
+    <string name="command_btn">Commander</string>
 </resources>

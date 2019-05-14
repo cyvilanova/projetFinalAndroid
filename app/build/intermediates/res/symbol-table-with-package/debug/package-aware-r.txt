@@ -1086,8 +1086,9 @@ id beginning
 id blocking
 id bottom
 id btnConnection
+id btnTest
 id buttonPanel
-id cancel
+id cart_products
 id center
 id center_horizontal
 id center_vertical
@@ -1107,6 +1108,7 @@ id customPanel
 id date
 id decor_content_parent
 id default_activity_button
+id delete_cart_product
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1115,7 +1117,6 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
-id edit
 id edit_cart
 id edit_query
 id end
@@ -1178,6 +1179,7 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id product_description
 id product_image
 id product_name
 id product_price
@@ -1327,6 +1329,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout cart
+layout cart_rows
 layout connection
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1403,8 +1406,11 @@ string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string btnConnection
+string cancel_order_btn
+string cart_cancel_button
 string character_counter_content_description
 string character_counter_pattern
+string command_btn
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior

@@ -2,14 +2,35 @@
 package com.example.quintessentiel;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
+/****************************************
+ Fichier: Order.java
+ Auteur: Catherine Bronsard
+ Fonctionnalité: Commande
+ Date : 8-4-2019
+
+ Vérification :
+ Date               Nom                   Approuvé
+ =========================================================
+
+
+ Historique de modifications :
+ Date               Nom     Description
+ =========================================================
+ 8-4-2019           CB      Création
+ 12-4-2019           CB      Avec intent
+ ****************************************/
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
+import com.example.quintessentiel.Order.CtrlOrder;
 import com.example.quintessentiel.Order.Order;
 import com.example.quintessentiel.Product.*;
 
@@ -18,35 +39,19 @@ import java.util.ArrayList;
 public class MyOrders extends AppCompatActivity {
 
     ListView listView;
+    int id_client = 0;
+    ArrayList<Order> orders = new ArrayList<>();
+    CtrlOrder ctrlOrder = new CtrlOrder();
 
     @Override
+    @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_orders);
 
-        ArrayList<Order> orders = new ArrayList<>();
-        ArrayList<Product> pro1 = new ArrayList<>();
-        ArrayList<Product> pro2 = new ArrayList<>();
-
-        Product p1 = new Product("POUR ORDER 1", "description1", 42, 15.00);
-        p1.setId(1);
-        Product p12 = new Product("POUR ORDER 1-2", "description1-2", 421, 115.00);
-        p12.setId(2);
-        Product p2 = new Product("POUR ORDER 2", "description2", 69, 13444.00);
-        p2.setId(3);
-
-
-
-        pro1.add(p1);
-        pro1.add(p12);
-        pro2.add(p2);
-
-        Order order1 = new Order(1,1, pro1,1, 1, 0.00, 0.00);
-        Order order2 = new Order(2, 2, pro2,1, 1, 0.00, 0.00);
-
-
-        orders.add(order1);
-        orders.add(order2);
+        Intent intent = getIntent();
+        id_client = intent.getIntExtra("id_client", 0);
+        orders = ctrlOrder.getAllOrdersClient(id_client);
 
         listView = findViewById(R.id.orders_listView);
 
@@ -82,8 +87,11 @@ public class MyOrders extends AppCompatActivity {
             no_order.setText("No : " + Integer.toString(orders.get(position).getId()));
             state_order.setText(Integer.toString(orders.get(position).getIdState()));
             sous_total.setText("SOUS TOTAL");
-            taxes.setText("TAXES");
-            total.setText("TOTAL");
+            taxes.setText((Double.toString(orders.get(position).getTps() + orders.get(position).getTvq())));
+            total.setText((Double.toString(orders.get(position).getTotal())));
+
+
+
 
             ListView listView = row.findViewById(R.id.list_order);
 
@@ -94,7 +102,6 @@ public class MyOrders extends AppCompatActivity {
             }
 
             ProductAdapter productAdapter = new ProductAdapter(context, orders.get(position).getProducts());
-
 
             listView.setAdapter(productAdapter);
             justifyListViewHeightBasedOnChildren(listView);
@@ -125,7 +132,7 @@ public class MyOrders extends AppCompatActivity {
                 TextView product_qty = row.findViewById(R.id.product_qty);
                 TextView product_price = row.findViewById(R.id.product_price);
 
-                int path = getResources().getIdentifier("img" + products.get(position).getId(), "drawable", getPackageName());
+                int path = getResources().getIdentifier(products.get(position).getImagePath(), "drawable", getPackageName());
 
                 imageView.setImageResource(path);
                 product_name.setText(products.get(position).getName());
@@ -137,6 +144,8 @@ public class MyOrders extends AppCompatActivity {
                 return row;
             }
         }
+
+
         public void justifyListViewHeightBasedOnChildren (ListView listView) {
 
             ListAdapter adapter = listView.getAdapter();

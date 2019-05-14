@@ -17,6 +17,9 @@
 
 package com.example.quintessentiel.Order;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import com.example.quintessentiel.Product.*;
 
 import java.util.ArrayList;
@@ -25,12 +28,16 @@ public class CtrlOrder {
     private MgrOrder mgrOrder;
     private MgrProduct mgrProduct;
 
+
+
+
     /**
      * Returns all the orders in the database
      * @return ArrayList of all orders
      */
-    public ArrayList<Order> getAllOrders() {
-        return new ArrayList<Order>();
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public ArrayList<Order> getAllOrdersClient(int id_client) {
+        return mgrOrder.getAllOrderClient(id_client);
     }
 
     /**
@@ -38,23 +45,16 @@ public class CtrlOrder {
      * @param order
      */
     public void addOrder(Order order) {
-
+        mgrOrder.insertOrder(order);
     }
 
     /**
      *
      * @param order
      */
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void editOrder(Order order) {
-
-    }
-
-    /**
-     *
-     * @param order
-     */
-    public void deleteOrder(Order order) {
-
+        mgrOrder.modifyOrder(order);
     }
 
     /* Getteurs setteurs */

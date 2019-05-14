@@ -3,6 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <ListView
         android:id="@+id/cart_products"
         android:layout_width="match_parent"
@@ -11,7 +15,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="5dp">
 
         <Button
             android:id="@+id/edit_cart"
@@ -19,7 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/buttonBrown"
-            android:text="Annuler la commande"
+            android:padding="2dp"
+            android:text="@string/cancel_order_btn"
             android:textColor="@color/colorTextButton" />
 
         <Button
@@ -28,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/buttonBrown"
-            android:text="Commander"
+            android:text="@string/command_btn"
             android:textColor="@color/colorTextButton" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

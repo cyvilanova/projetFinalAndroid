@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.quintessentiel.User.CtrlUser;
 
@@ -15,7 +16,7 @@ public class ConnectionActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connection);
-        super.onCreateDrawer();
+        super.onCreateDrawer(true);
 
         this.ctrlUser = new CtrlUser(this);
 
@@ -24,6 +25,7 @@ public class ConnectionActivity extends BaseActivity {
         }
         else{   //If user is not connected yet
             //On connection button click
+
             findViewById(R.id.btnConnection).setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -42,6 +44,7 @@ public class ConnectionActivity extends BaseActivity {
 
                         if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
                             System.out.println("CONNECTED");
+                            ConnectionActivity.super.setUserName(usernameVal);
                         }
                         else{
                             System.out.println("ERROR, CAN'T CONNECT");
@@ -84,9 +87,9 @@ public class ConnectionActivity extends BaseActivity {
      */
     public void loadSignUpPage(){
         System.out.println("LOADING....");
-        SignUpActivity ca = new SignUpActivity();
+        SignUpActivity sa = new SignUpActivity();
 
-        Intent intent = new Intent(ConnectionActivity.this,ca.getClass());
+        Intent intent = new Intent(ConnectionActivity.this,sa.getClass());
         ConnectionActivity.this.startActivity(intent);
     }
 

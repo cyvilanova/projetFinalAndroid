@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.quintessentiel.User.CtrlUser;
 import com.example.quintessentiel.User.Question;
@@ -23,7 +24,8 @@ public class SignUpActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
-        super.onCreateDrawer();
+        super.onCreateDrawer(true);
+
 
         ctrlUser = new CtrlUser(this);
         populateSecurityQuestions();

@@ -25,6 +25,6 @@
         android:paddingTop="10dp"
         android:paddingLeft="10dp"
         android:paddingBottom="4dp"
-        android:text="@string/welcomeName"
+        android:text="@string/notConnectedWelcome"
         android:textColor="@color/colorText" />
 </LinearLayout>

@@ -8,4 +8,22 @@
     <string name="btnConnection">Connexion</string>
     <string name="hintUsername">Ex: Gazelle123</string>
     <string name="hintPassword">Ex: Abc123X</string>
+
+
+    <!-- Form page -->
+    <string name="titleFormCustomRecipe">Recette personnalisée</string>
+    <string name="descCustomRecipe">Veuillez remplir le formulaire suivant pour recevoir par courriel la suggestion d\'un produit 100% personnalisé.</string>
+    <string name="lblAge">Âge</string>
+    <string name="lblSkinType">Type de peau</string>
+    <string name="lblWorkEnvironment">Environnement de travail</string>
+    <string name="hintWorkEnvironment">Décrivez votre environnement de travail.</string>
+    <string name="lblEffect">Effet escompté</string>
+    <string name="lblQuantity">Quantité</string>
+    <string name="lblMl">mL</string>
+    <string name="lblFragrance">Fragrance</string>
+    <string name="lblProductType">Type de produit</string>
+    <string name="lblMoreInfos">Informations supplémentaires</string>
+    <string name="hintMoreInfos">Demande spéciale, allergie, commentaire, etc.</string>
+    <string name="btnConfirm">Confirmer</string>
+    <string name="btnSendForm">Envoyer</string>
 </resources>

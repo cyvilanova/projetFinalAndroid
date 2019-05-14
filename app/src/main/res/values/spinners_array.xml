@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="product_types_array">
+        <item>Sérum</item>
+        <item>Crème à main</item>
+        <item>Shampoing</item>
+        <item>Beurre fouetté</item>
+        <item>Nettoyant visage</item>
+        <item>Crème visage</item>
+    </string-array>
+
+    <string-array name="skintypes_array">
+        <item>Normale</item>
+        <item>Sèche</item>
+        <item>Grasse</item>
+        <item>Mixte</item>
+        <item>Sensible</item>
+        <item>Déshydratée</item>
+        <item>Mature</item>
+    </string-array>
+
+    <string-array name="effects_array">
+        <item>Hydratation</item>
+        <item>Anti-âge</item>
+        <item>Anti-imperfections</item>
+        <item>Purifiant</item>
+        <item>Exfoliant</item>
+        <item>Protection UV</item>
+    </string-array>
+
+    <string-array name="fragrances_array">
+        <item>Sans parfum</item>
+        <item>Lavande</item>
+        <item>Eucalyptus</item>
+        <item>Rose</item>
+        <item>Beurre de karité</item>
+    </string-array>
+</resources>

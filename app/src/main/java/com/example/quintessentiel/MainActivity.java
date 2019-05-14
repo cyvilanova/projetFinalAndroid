@@ -1,5 +1,6 @@
 package com.example.quintessentiel;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -32,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void testBd() {
-        mgrProduct.getProductById(1);
-        mgrProduct.insertProduct();
+        Intent formIntent = new Intent(this, FormActivity.class);
+        startActivity(formIntent);
     }
 
 }

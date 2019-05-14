@@ -20,6 +20,7 @@ package com.example.quintessentiel.Order;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.util.Log;
 
 import com.example.quintessentiel.Constants;
 import com.example.quintessentiel.HttpPostRequest;
@@ -38,7 +39,7 @@ public class MgrOrder {
     private MgrProduct mgrProduct;
     private HttpPostRequest httpRequest;
 
-    MgrOrder() {
+    public MgrOrder() {
         this.mgrProduct = new MgrProduct();
         this.httpRequest = new HttpPostRequest();
     }
@@ -61,7 +62,7 @@ public class MgrOrder {
         ArrayList<Order> orders = new ArrayList<>();
         String query = "SELECT id_order FROM `order` WHERE id_client = :client";
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put(":id_client", id_client);
+        parameters.put(":client", id_client);
 
         JSONObject jsonParameters = new JSONObject(parameters);
         this.httpRequest.setHttpUrlConnection(Constants.HTTP_URL_CONNECTION_SELECT);
@@ -70,6 +71,7 @@ public class MgrOrder {
         ArrayList<ArrayList<String>> ordersList = new ArrayList<>();
         JSONArray jsonProductsArray = null;
         try {
+            Log.d("FML", "getAllOrderClient: " + result);
             jsonProductsArray = new JSONArray(result);
             if (jsonProductsArray != null) {
                 for (int i = 0; i < jsonProductsArray.length(); i++) {
@@ -106,7 +108,7 @@ public class MgrOrder {
         String query = "SELECT * FROM `order` WHERE id_order = :id";
 
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put(":id_product", id);
+        parameters.put(":id", id);
 
         JSONObject jsonParameters = new JSONObject(parameters);
         this.httpRequest.setHttpUrlConnection(Constants.HTTP_URL_CONNECTION_SELECT);
@@ -127,14 +129,16 @@ public class MgrOrder {
                             orderProperties.add(jsonProduct.get(j).toString());
                         }
                     }
-
+                    Log.d("FML", "orderProperties: " + orderProperties);
                     ordersList.add(orderProperties);
                 }
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        Log.d("FML", "getAllOrderClient: " + ordersList);
         ArrayList<Order> order = createOrders(ordersList);
+        Log.d("FML", "getAllOrderClient: " + order.size());
         return order.get(0);
     }
 
@@ -175,13 +179,15 @@ public class MgrOrder {
                     products, // products
                     Integer.parseInt(ordersList.get(i).get(2)), // id user
                     Integer.parseInt(ordersList.get(i).get(4)), // id shipping method
-                    Integer.parseInt(ordersList.get(i).get(5)), //  tps
-                    Integer.parseInt(ordersList.get(i).get(6)), //  tvq
+                    Double.parseDouble(ordersList.get(i).get(5)), //  tps
+                    Double.parseDouble(ordersList.get(i).get(6)), //  tvq
                     ordersList.get(i).get(8),
                     getQuantitiesFromOrder(Integer.parseInt(ordersList.get(i).get(0)))
             );
             orders.add(order);
+            Log.d("FML", "getAllOrderClient: " + orders.size());
         }
+
         return orders;
     }
 
@@ -196,7 +202,7 @@ public class MgrOrder {
 
         String query = "SELECT * FROM ta_order_product WHERE id_order = :id";
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put(":id_product", id_order);
+        parameters.put(":id", id_order);
 
         JSONObject jsonParameters = new JSONObject(parameters);
         this.httpRequest.setHttpUrlConnection(Constants.HTTP_URL_CONNECTION_SELECT);
@@ -244,7 +250,7 @@ public class MgrOrder {
 
         String query = "SELECT * FROM ta_order_product WHERE id_order = :id";
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put(":id_product", id_order);
+        parameters.put(":id", id_order);
 
         JSONObject jsonParameters = new JSONObject(parameters);
         this.httpRequest.setHttpUrlConnection(Constants.HTTP_URL_CONNECTION_SELECT);
@@ -277,7 +283,7 @@ public class MgrOrder {
         for (int i = 0; i < productList.size(); i++) {
             mgrProduct.getProductById(Integer.parseInt(productList.get(i).get(1)));
             products.add((mgrProduct.getProducts().get(0)));
-            mgrProduct.setProducts(null);
+            mgrProduct.setProducts(new ArrayList<>());
         }
 
         return products;

@@ -29,7 +29,10 @@ public class CtrlOrder {
     private MgrProduct mgrProduct;
 
 
-
+    public CtrlOrder() {
+        mgrOrder = new MgrOrder();
+        mgrProduct = new MgrProduct();
+    }
 
     /**
      * Returns all the orders in the database

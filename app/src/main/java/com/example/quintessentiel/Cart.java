@@ -78,7 +78,6 @@ public class Cart extends AppCompatActivity {
             TextView product_price = row.findViewById(R.id.product_price);
 
 
-
             int path = getResources().getIdentifier(products.get(position).getImagePath(), "drawable", getPackageName());
 
             imageView.setImageResource(path);

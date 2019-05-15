@@ -1,73 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+   >
+    <!--  tools:openDrawer="end" -->
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer"
+        android:background="@color/lightSideBar"
+        app:itemTextColor="@color/colorText"
+        app:itemIconTint="@color/colorText" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar" />
+                layout="@layout/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
+
+            <!-- Page title -->
             <TextView
                 android:id="@+id/titleConnection"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/titleConnection"
-                android:textSize="35dp" />
+                android:textSize="35sp"
+                android:textColor="@color/colorText"/>
 
+            <!-- Start of the body -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                >
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
 
                 <TextView
                     android:id="@+id/lblUsername"
                     android:layout_width="wrap_content"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_horizontal|left"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
                     android:text="@string/lblUsername"
-                    android:textSize="23dp" />
+                    android:textSize="23sp"
+                    android:textColor="@color/colorText"/>
 
                 <EditText
                     android:id="@+id/txtUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="15sp"
                     android:background="@drawable/edit_text_background"
                     android:ems="10"
                     android:hint="@string/hintUsername"
                     android:inputType="textPersonName"
-                    android:paddingLeft="3px"
+                    android:paddingLeft="3dp"
                     android:paddingTop="5dp"
-                    android:paddingRight="3px"
+                    android:paddingRight="3dp"
                     android:paddingBottom="5dp"
-                    android:textSize="23dp" />
+                    android:textSize="23sp"
+                    android:theme="@style/EditTextColorCustom"
+                    android:textColorHint="@color/hintColor"
+                    />
 
                 <TextView
                     android:id="@+id/lblPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|left"
-                    android:layout_marginTop="40dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="40sp"
                     android:text="@string/lblPassword"
-                    android:textSize="23dp" />
+                    android:textSize="23sp"
+                    android:textColor="@color/colorText"/>
 
 
                 <EditText
@@ -80,11 +110,13 @@
                     android:ems="10"
                     android:hint="@string/hintPassword"
                     android:inputType="textPassword"
-                    android:paddingLeft="3px"
+                    android:paddingLeft="3dp"
                     android:paddingTop="5dp"
-                    android:paddingRight="3px"
+                    android:paddingRight="3dp"
                     android:paddingBottom="5dp"
-                    android:textSize="23dp" />
+                    android:textSize="23sp"
+                    android:theme="@style/EditTextColorCustom"
+                    android:textColorHint="@color/hintColor"/>
 
 
                 <Button
@@ -96,11 +128,23 @@
                     android:paddingLeft="30dp"
                     android:paddingRight="30dp"
                     android:text="@string/btnConnection"
-                    android:textColor="@color/colorTextButton" />
+                    android:textColor="@color/colorText"/>
+
+                <Button
+                    android:id="@+id/btnToSignUp"
+                    android:layout_marginTop="50dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorButton"
+                    android:text="@string/btnCreateAccount"
+                    android:textColor="@color/colorText" />
+
 
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.DrawerLayout>

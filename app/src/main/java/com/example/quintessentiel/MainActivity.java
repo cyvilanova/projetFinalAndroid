@@ -1,33 +1,52 @@
 package com.example.quintessentiel;
 
+
+import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-
 import com.example.quintessentiel.Product.MgrProduct;
+import com.example.quintessentiel.User.CtrlUser;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnTest;
-    MgrProduct mgrProduct = new MgrProduct();
+
+
+    private SharedPreferences prefs;
+    private Button btnTest;
+    private MgrProduct mgrProduct = new MgrProduct();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        Intent myIntent = new Intent(MainActivity.this, CatalogActivity.class);
-        MainActivity.this.startActivity(myIntent);
-        }
+        setContentView(R.layout.connection);
 
+        //Clears the preferences
+        prefs = this.getSharedPreferences("UserPref", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.clear().commit();
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void testBd() {
-        mgrProduct.getProductById(1);
-        mgrProduct.insertProduct();
+        //Launches the connection activity
+        ConnectionActivity sa = new ConnectionActivity();
+        Intent intent = new Intent(MainActivity.this,sa.getClass());
+        MainActivity.this.startActivity(intent);
+
     }
 
 }

@@ -61,8 +61,27 @@ public class BaseActivity extends AppCompatActivity
             navigationView.bringToFront();
             navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
                 @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    System.out.println(menuItem);
+                public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+
+                    switch(menuItem.toString()){
+                        case "Catalogue":
+                                //Open page here
+                            break;
+                        case "Mon panier":
+                            //Open page here
+                            break;
+                        case "Recette personalisée":
+                            //Open page here
+                            break;
+                        case "Notifications":
+                            //Open page here
+                            break;
+                        case "Déconnexion":
+                            //Open page here
+                            break;
+
+                    }
                     return false;
                 }
             });

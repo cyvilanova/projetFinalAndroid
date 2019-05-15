@@ -23,7 +23,8 @@ public class ConnectionActivity extends BaseActivity {
         if(this.ctrlUser.checkIfConnected()){   //If user is already connected
             loadCatalogPage();
         }
-        else{   //If user is not connected yet
+        else{   //If user is not connected
+            // yet
             //On connection button click
 
             findViewById(R.id.btnConnection).setOnClickListener(new View.OnClickListener() {

@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private SharedPreferences prefs;
-    //Test code
     private Button btnTest;
     private MgrProduct mgrProduct = new MgrProduct();
 
@@ -38,50 +37,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connection);
 
+        //Clears the preferences
         prefs = this.getSharedPreferences("UserPref", 0);
         SharedPreferences.Editor editor = prefs.edit();
         editor.clear().commit();
 
+        //Launches the connection activity
         ConnectionActivity sa = new ConnectionActivity();
         Intent intent = new Intent(MainActivity.this,sa.getClass());
         MainActivity.this.startActivity(intent);
-        //Test code
-        /**
-        btnTest = (Button) findViewById(R.id.btnTest);
 
-        btnTest.setOnClickListener(new View.OnClickListener() {
-
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onClick(View v) {
-                testBd();
-            }
-        });
-
-
-        CtrlUser ctrluser = new CtrlUser(this);
-        ctrluser.checkCredentials("David","abc123");
-        //ctrluser.createUser("hule","quebeccoisepic@gmail.com","abc123","abc123","gros roux",1);
-        System.out.println("USER CONNECTED");
-
-
-        prefs = getApplicationContext().getSharedPreferences("UserPref", 0); // 0 - for private mode
-
-        System.out.println(prefs.getAll());
-
-
-
-         **/
-
-
-
-    }
-
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void testBd() {
-        mgrProduct.getProductById(1);
-        mgrProduct.insertProduct();
     }
 
 }

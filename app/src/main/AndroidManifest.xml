@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MyOrders" />
+        <activity android:name=".Cart" />
     </application>
 
 </manifest>

@@ -6,21 +6,19 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.quintessentiel.Order.CtrlOrder;
 import com.example.quintessentiel.Order.MgrOrder;
+import com.example.quintessentiel.Order.Order;
 import com.example.quintessentiel.Product.MgrProduct;
-import com.example.quintessentiel.Product.Product;
-
 
 public class MainActivity extends AppCompatActivity {
 
     Button btnTest;
     MgrProduct mgrProduct = new MgrProduct();
-    CtrlOrder ctrlOrder = new CtrlOrder();
+
 
 
     @Override
@@ -44,10 +42,17 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void testBd() {
-        Intent intent = new Intent(this, MyOrders.class);
+        Intent intent = new Intent(this, Cart.class);
         intent.putExtra("id_client", 1);
-        Log.d("FML", "testBd: dsbjnb," + intent);
+
+        mgrProduct.getProductById(1);
+        mgrProduct.getProductById(2);
+        MgrOrder mgrOrder = new MgrOrder();
+
+        Order o = mgrOrder.getInfoOrder(1);
+
+
+        intent.putExtra("order", o);
         startActivity(intent);
     }
-
 }

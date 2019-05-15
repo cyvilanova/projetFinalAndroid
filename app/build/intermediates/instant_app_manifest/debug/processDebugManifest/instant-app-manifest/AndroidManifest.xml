@@ -30,6 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.quintessentiel.MyOrders" />
+        <activity android:name="com.example.quintessentiel.Cart" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

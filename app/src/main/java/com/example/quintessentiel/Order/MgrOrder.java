@@ -138,7 +138,7 @@ public class MgrOrder {
         }
         Log.d("FML", "getAllOrderClient: " + ordersList);
         ArrayList<Order> order = createOrders(ordersList);
-        Log.d("FML", "getAllOrderClient: " + order.size());
+        Log.d("FML", "getAllOrderClient: qty  " + order.get(0).getQuantities());
         return order.get(0);
     }
 
@@ -186,6 +186,7 @@ public class MgrOrder {
             );
             orders.add(order);
             Log.d("FML", "getAllOrderClient: " + orders.size());
+            Log.d("FML", "getAllOrderClient:dfgfsdfdsdfds " + getQuantitiesFromOrder(Integer.parseInt(ordersList.get(i).get(0))));
         }
 
         return orders;
@@ -235,7 +236,7 @@ public class MgrOrder {
         for (int i = 0; i < productList.size(); i++) {
             quantities.add(Integer.parseInt(productList.get(i).get(2)));
         }
-
+        Log.d("FML", "getQuantitiesFromOrder: dfgs " + quantities.size() + " " + quantities);
         return quantities;
     }
 

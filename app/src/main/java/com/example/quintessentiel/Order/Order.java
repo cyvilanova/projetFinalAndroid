@@ -52,6 +52,7 @@ public class Order implements Serializable {
         this.tps = tps;
         this.tvq = tvq;
         this.setDate(date);
+        this.setQuantities(quantities);
     }
 
     public double getTotal() {

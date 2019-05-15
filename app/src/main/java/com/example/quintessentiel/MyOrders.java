@@ -25,6 +25,7 @@ import android.support.v7.app.AppCompatActivity;
  12-4-2019           CB      Avec intent
  ****************************************/
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +53,8 @@ public class MyOrders extends AppCompatActivity {
         Intent intent = getIntent();
         id_client = intent.getIntExtra("id_client", 0);
         orders = ctrlOrder.getAllOrdersClient(id_client);
+
+        Log.d("FML", "onCreate: " + orders.get(0).getQuantities());
 
         listView = findViewById(R.id.orders_listView);
 
@@ -83,25 +86,23 @@ public class MyOrders extends AppCompatActivity {
             TextView taxes = row.findViewById(R.id.taxes);
             TextView total = row.findViewById(R.id.total);
 
-            date.setText("date");
+            date.setText(orders.get(position).getDate());
             no_order.setText("No : " + Integer.toString(orders.get(position).getId()));
             state_order.setText(Integer.toString(orders.get(position).getIdState()));
-            sous_total.setText("SOUS TOTAL");
+            sous_total.setText(Double.toString(orders.get(position).getTotal()-(orders.get(position).getTps() + orders.get(position).getTvq())));
             taxes.setText((Double.toString(orders.get(position).getTps() + orders.get(position).getTvq())));
             total.setText((Double.toString(orders.get(position).getTotal())));
 
 
-
-
             ListView listView = row.findViewById(R.id.list_order);
-
+            ProductAdapter productAdapter = null;
             for (int i = 0; i < orders.get(position).getProducts().size(); i++) {
                 ArrayList<Product> pro = new ArrayList<>();
                 pro.add(orders.get(position).getProducts().get(i));
-                ProductAdapter productAdapter = new ProductAdapter(context, pro);
+                productAdapter = new ProductAdapter(context, pro, orders.get(position).getQuantities());
             }
 
-            ProductAdapter productAdapter = new ProductAdapter(context, orders.get(position).getProducts());
+            productAdapter = new ProductAdapter(context, orders.get(position).getProducts(), orders.get(position).getQuantities());
 
             listView.setAdapter(productAdapter);
             justifyListViewHeightBasedOnChildren(listView);
@@ -113,11 +114,13 @@ public class MyOrders extends AppCompatActivity {
 
             Context context;
             ArrayList<Product> products;
+            ArrayList<Integer> quantities;
 
-            ProductAdapter(Context c, ArrayList<Product> products) {
+            ProductAdapter(Context c, ArrayList<Product> products, ArrayList<Integer> quantities) {
                 super(c, R.layout.order_products_rows, R.id.text, products);
                 this.context = c;
                 this.products = products;
+                this.quantities = quantities;
             }
 
             @Override
@@ -132,14 +135,12 @@ public class MyOrders extends AppCompatActivity {
                 TextView product_qty = row.findViewById(R.id.product_qty);
                 TextView product_price = row.findViewById(R.id.product_price);
 
-                int path = getResources().getIdentifier(products.get(position).getImagePath(), "drawable", getPackageName());
-
+                String[] imagepath = products.get(position).getImagePath().split("\\.");
+                int path = getResources().getIdentifier(imagepath[0], "drawable", getPackageName());
                 imageView.setImageResource(path);
                 product_name.setText(products.get(position).getName());
-                product_qty.setText(Integer.toString(products.get(position).getQuantity()));
+                product_qty.setText(Integer.toString(quantities.get(position)));
                 product_price.setText(Double.toString(products.get(position).getPrice()));
-
-
 
                 return row;
             }

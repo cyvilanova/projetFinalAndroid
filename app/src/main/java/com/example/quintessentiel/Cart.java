@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -49,44 +50,64 @@ public class Cart extends AppCompatActivity {
         ListView listView = findViewById(R.id.cart_products);
 
 
-        ProductAdapter adapter = new ProductAdapter(this, order.getProducts());
+        ProductAdapter adapter = new ProductAdapter(this, order.getProducts(), order.getQuantities());
         listView.setAdapter(adapter);
+        justifyListViewHeightBasedOnChildren(listView);
     }
 
     class ProductAdapter extends ArrayAdapter<Product> {
 
         Context context;
         ArrayList<Product> products;
+        ArrayList<Integer> quantities;
 
-        ProductAdapter(Context c, ArrayList<Product> products) {
-            super(c, R.layout.cart, R.id.text, products);
+        ProductAdapter(Context c, ArrayList<Product> products, ArrayList<Integer> quantities) {
+            super(c, R.layout.order_products_rows, R.id.text, products);
             this.context = c;
             this.products = products;
+            this.quantities = quantities;
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            View row = layoutInflater.inflate(R.layout.cart_rows, parent, false);
+            View row = layoutInflater.inflate(R.layout.order_products_rows, parent, false);
 
             ImageView imageView = row.findViewById(R.id.product_image);
             TextView product_name = row.findViewById(R.id.product_name);
             TextView product_qty = row.findViewById(R.id.product_qty);
-            TextView product_desc = row.findViewById(R.id.product_description);
             TextView product_price = row.findViewById(R.id.product_price);
 
-
-            int path = getResources().getIdentifier(products.get(position).getImagePath(), "drawable", getPackageName());
-
+            String[] imagepath = products.get(position).getImagePath().split("\\.");
+            int path = getResources().getIdentifier(imagepath[0], "drawable", getPackageName());
             imageView.setImageResource(path);
             product_name.setText(products.get(position).getName());
-            product_qty.setText(Integer.toString(products.get(position).getQuantity()));
+            product_qty.setText(Integer.toString(quantities.get(position)));
             product_price.setText(Double.toString(products.get(position).getPrice()));
-            product_desc.setText(products.get(position).getDescription());
 
             return row;
         }
+    }
+    public void justifyListViewHeightBasedOnChildren (ListView listView) {
+
+        ListAdapter adapter = listView.getAdapter();
+
+        if (adapter == null) {
+            return;
+        }
+        ViewGroup vg = listView;
+        int totalHeight = 0;
+        for (int i = 0; i < adapter.getCount(); i++) {
+            View listItem = adapter.getView(i, null, vg);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams par = listView.getLayoutParams();
+        par.height = totalHeight + (listView.getDividerHeight() * (adapter.getCount() - 1));
+        listView.setLayoutParams(par);
+        listView.requestLayout();
     }
 }

@@ -24,7 +24,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="113dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -54,21 +54,42 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:orientation="vertical">
+                android:layout_height="38dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/productPrice"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="@string/lblProductPrice"
-                    android:textSize="25dp" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblProductPrice"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="@string/lblProductPrice"
+                        android:textSize="25dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="641dp"
+                    android:layout_height="34dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/productPrice"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/productPrice"
+                        android:textSize="25dp" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="111dp"
+                android:layout_height="94dp"
                 android:orientation="vertical">
 
                 <TextView

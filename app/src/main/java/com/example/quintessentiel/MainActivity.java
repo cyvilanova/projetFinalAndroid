@@ -1,5 +1,6 @@
 package com.example.quintessentiel;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.catalog_product);
+        Intent myIntent = new Intent(MainActivity.this, CatalogActivity.class);
+        MainActivity.this.startActivity(myIntent);
         }
 
 

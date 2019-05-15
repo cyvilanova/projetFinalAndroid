@@ -26,6 +26,9 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        <activity android:name=".ConnectionActivity">
+        </activity>
+        <activity android:name=".SignUpActivity">
         </activity>
     </application>
 

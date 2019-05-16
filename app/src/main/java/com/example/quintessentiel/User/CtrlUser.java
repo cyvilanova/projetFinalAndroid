@@ -1,7 +1,7 @@
 /****************************************
  Fichier : CtrlUser.java
  Auteure : David Gaulin
- Fonctionnalité : A6 - Login
+ Fonctionnalité : M1 - Authentification && M2-Enregistrement
  Date : 2019-05-08
  Vérification :
  Date Nom Approuvé
@@ -27,11 +27,12 @@ public class CtrlUser {
 
     /**
      * Creates a user with the given infos and calls the manager to add it to the db
-     * @param name
-     * @param email
-     * @param password
-     * @param secretResponse
-     * @param idSecretQuestion
+     * @param name of the user
+     * @param email of the user
+     * @param password of the user
+     * @param secretResponse given by the user
+     * @param idSecretQuestion chosen by the user
+     * @return a boolean telling if the creation worked or not
      */
     public boolean createUser(String name, String email,String password,String secretResponse,Integer idSecretQuestion){
 
@@ -43,6 +44,7 @@ public class CtrlUser {
     /**
      * Checks if the user is already connected
      * in the db
+     * @return a boolean telling if the user is connected
      */
     public boolean checkIfConnected(){
         return this.mgrUser.checkIfConnected();
@@ -55,6 +57,7 @@ public class CtrlUser {
      * in the db
      * @param name
      * @param password
+     * @return a boolean telling if the credentials match or not
      */
     public boolean checkCredentials(String name, String password){
         return this.getMgrUser().checkCredentials(name,password);

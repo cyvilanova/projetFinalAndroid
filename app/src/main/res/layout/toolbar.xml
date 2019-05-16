@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fichier : toolbar.xml
+    Auteure : David Gaulin
+    Fonctionnalité : Aucune précise
+    Date : 2019-05-08
+    Vérification :
+    Date Nom Approuvé
+    =========================================================
+    Historique de modifications :
+    Date Nom Description
+    =========================================================
+-->
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tb"
     android:layout_width="match_parent"
@@ -24,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:paddingLeft="30dp"
             android:orientation="horizontal">
 
             <ImageView

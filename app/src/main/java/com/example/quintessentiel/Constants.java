@@ -15,6 +15,7 @@ package com.example.quintessentiel;
 */
 public final class Constants {
 
+<<<<<<< HEAD
 
     public static final String SERVER_IP = "10.0.1.17";
 

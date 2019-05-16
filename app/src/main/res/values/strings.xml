@@ -15,11 +15,34 @@
     <string name="hintUsername">Ex: Gazelle123</string>
     <string name="hintPassword">Ex: Abc123X</string>
 
-
     <!-- Commandes -->
     <string name="cart_cancel_button">Supprimer</string>
     <string name="cancel_order_btn">Annuler la commande</string>
     <string name="command_btn">Commander</string>
+
+    <!-- Personal recipe page 1-->
+    <string name="titlePersonalRecipe">Veuillez remplir le formulaire suivant afin de commander un produit 100% personalisé.</string>
+    <string name="lblAge">Age:</string>
+    <string name="lblSkinType">Type de peau:</string>
+    <string name="lblWorkplaceEnvironment">Envrionnement de travail</string>
+
+    <!-- Catalog Page -->
+    <string name="txtCategory">Catégorie : </string>
+    <string-array name="spinnerCategoryName">
+        <item>category1</item>
+        <item>category2</item>
+        <item>category3</item>
+        <item>category4</item>
+    </string-array>
+    <string name="txtProductTitle">Product Title PlaceHolder</string>
+    <string name="lblProductPrice">Prix: </string>
+    <string name="productPrice">0.00$</string>
+    <string name="txtPrice">itemPrice</string>
+    <string name="txtProductDescription">Product Description PlaceHolder</string>
+    <string name="txtProductState">product State PlaceHolder</string>
+    <string name="txtButtonProductAddCart">Ajouter au panier</string>
+    <string name="stateAvailable">En stock</string>
+    <string name="stateUnavailable">En rupture de stock</string>
 
     <string name="hintEmail">Ex: lolipop3000@gmail.com</string>
     <string name="hintSecQuestion">Ex: Un chat</string>
@@ -35,6 +58,7 @@
     <string name="itemNotification">Notifications</string>
     <string name="itemLogOut">Déconnexion</string>
     <string name="my_orders">Mes commandes</string>
+
 
 
 </resources>

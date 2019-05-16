@@ -23,8 +23,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ImageView;
 import com.example.quintessentiel.User.CtrlUser;
 
 public class ConnectionActivity extends BaseActivity {
@@ -38,13 +38,14 @@ public class ConnectionActivity extends BaseActivity {
         super.onCreateDrawer(true);
 
         ImageView facebookLink = findViewById(R.id.facebook);
+
         //Hide the side bar menu
         FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
         btnSideMenu.setVisibility(View.INVISIBLE);
 
         this.ctrlUser = new CtrlUser(this);
 
-        if(this.ctrlUser.checkIfConnected()){   //If user is already connected
+        if (this.ctrlUser.checkIfConnected()) {   //If user is already connected
             loadCatalogPage();
         }
         else{   //If user is not connected
@@ -63,23 +64,27 @@ public class ConnectionActivity extends BaseActivity {
                     String passwordVal = passwordField.getText().toString();
 
 
-                    if(usernameVal.equals("") || passwordVal.equals("")){   //If fields are empty
+
+                    if (usernameVal.equals("") || passwordVal.equals("")) {   //If fields are empty
                         Toast.makeText(getBaseContext(), "Veuillez remplir les champs correctement", Toast.LENGTH_LONG).show();
-                    }
-                    else{   //Fields are all filled
+                    } else {   //Fields are all filled
+
+                        if (ctrlUser.checkCredentials(usernameVal, passwordVal)) {
+                            final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 500);
+                            tg.startTone(ToneGenerator.TONE_PROP_BEEP);
+                            if (ctrlUser.checkCredentials(usernameVal, passwordVal)) { //Connection successfull
+                                ConnectionActivity.super.setUserName(usernameVal);
+                                loadCatalogPage();
+                            } else {   //Wrong infos given
+                                Toast.makeText(getBaseContext(), "Mauvais renseignements", Toast.LENGTH_LONG).show();
+                            }
 
                         if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
                             final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 500);
                             tg.startTone(ToneGenerator.TONE_PROP_BEEP);
-                        if(ctrlUser.checkCredentials(usernameVal,passwordVal)){ //Connection successfull
                             ConnectionActivity.super.setUserName(usernameVal);
                             loadCatalogPage();
                         }
-                        else{   //Wrong infos given
-                            Toast.makeText(getBaseContext(), "Mauvais renseignements", Toast.LENGTH_LONG).show();
-                        }
-
-
                     }
 
                 }
@@ -92,21 +97,16 @@ public class ConnectionActivity extends BaseActivity {
                     loadSignUpPage();
                 }
             });
+
+
+            facebookLink.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    goToFacebook("316220211894882");
+                }
+
+            });
         }
-
-        findViewById(R.id.toolBarLeftBlockImage).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        facebookLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToFacebook("316220211894882");
-            }
-        });
     }
 
     /**
@@ -123,24 +123,24 @@ public class ConnectionActivity extends BaseActivity {
     public void loadSignUpPage(){
         SignUpActivity sa = new SignUpActivity();
 
-        Intent intent = new Intent(ConnectionActivity.this,sa.getClass());
+        Intent intent = new Intent(ConnectionActivity.this, sa.getClass());
         ConnectionActivity.this.startActivity(intent);
     }
 
     /**
-     *  Brings the user to the Quintessential Facebook page
+     * Brings the user to the Quintessential Facebook page
+     *
      * @param pageId id of the facebook page to load
      */
-    public void goToFacebook(String pageId){
-        try{
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/"+pageId));
+    public void goToFacebook(String pageId) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/" + pageId));
             startActivity(intent);
-        }catch (ActivityNotFoundException e){
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/"+pageId));
+        } catch (ActivityNotFoundException e) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/" + pageId));
             startActivity(intent);
         }
     }
-
 
 
 }

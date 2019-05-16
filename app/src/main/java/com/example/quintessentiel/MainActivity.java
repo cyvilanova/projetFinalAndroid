@@ -1,11 +1,14 @@
 package com.example.quintessentiel;
 
+import android.app.NotificationManager;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatDelegate;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 
@@ -22,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connection);
 
+
+
         //Clears the preferences
         prefs = this.getSharedPreferences("UserPref", 0);
         SharedPreferences.Editor editor = prefs.edit();
@@ -34,3 +39,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+

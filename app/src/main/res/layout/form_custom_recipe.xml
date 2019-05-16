@@ -25,16 +25,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="58dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
             android:gravity="top"
             android:orientation="vertical"
             android:paddingBottom="100dp">
-
 
             <include
                 layout="@layout/toolbar"
@@ -268,7 +261,7 @@
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine"
                 android:singleLine="false"
-                android:text="@string/hintWorkEnvironment" />
+                android:hint="@string/hintWorkEnvironment" />
 
             <TextView
                 android:id="@+id/lblMoreInfos"
@@ -294,7 +287,7 @@
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine"
                 android:singleLine="false"
-                android:text="@string/hintMoreInfos" />
+                android:hint="@string/hintMoreInfos" />
 
             <Button
                 android:id="@+id/btnConfirm"

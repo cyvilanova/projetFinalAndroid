@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +38,7 @@
         <activity android:name=".Cart" android:parentActivityName=".CatalogActivity"/>
         <activity android:name=".AddOrder" android:parentActivityName=".CatalogActivity"/>
         <activity android:name=".MyOrders" android:parentActivityName=".CatalogActivity"/>
+
     </application>
 
 </manifest>

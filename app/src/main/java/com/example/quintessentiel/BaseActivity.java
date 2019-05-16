@@ -13,6 +13,7 @@
 package com.example.quintessentiel;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
@@ -87,7 +88,14 @@ public class BaseActivity extends AppCompatActivity {
                             //Open page here
                             break;
                         case "Déconnexion":
-                            //Open page here
+                            //Clears the preferences
+                            SharedPreferences prefs;
+                            prefs = getApplicationContext().getSharedPreferences("UserPref", 0);
+                            SharedPreferences.Editor editor = prefs.edit();
+                            editor.clear().commit();
+
+                            Intent intentLogout = new Intent(getApplicationContext(), ConnectionActivity.class);
+                            startActivity(intentLogout);
                             break;
                         case "Mes commandes":
                             Intent myOrders = new Intent(getApplicationContext(), MyOrders.class);

@@ -49,11 +49,6 @@ public class BaseActivity extends AppCompatActivity
 
 
                     View view = getCurrentFocus();
-
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                    view.clearFocus(); //The parent of this elements needs to be focusable
-
                 }
 
             });

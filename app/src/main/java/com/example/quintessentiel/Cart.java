@@ -25,6 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -54,7 +55,13 @@ public class Cart extends BaseActivity {
         }
         else {
 
-
+            Button btn = findViewById(R.id.command_cart);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    
+                }
+            });
             ListView listView = findViewById(R.id.cart_products);
 
 

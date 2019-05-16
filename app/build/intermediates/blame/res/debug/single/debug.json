@@ -1436,6 +1436,10 @@
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\d49cc48618c47f61d6f30b4b4916245c\\res\\drawable-mdpi-v4\\design_ic_visibility.png"
     },
     {
+        "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout_details_order.xml.flat",
+        "source": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\src\\main\\res\\layout\\details_order.xml"
+    },
+    {
         "merged": "D:\\Cegep\\Session 4\\android\\projetFinalAndroid\\projetFinalAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\Catherine Bronsard\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\188957e6c3c97c23bf590531046f8a2d\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },

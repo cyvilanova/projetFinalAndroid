@@ -60,9 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Launches the connection activity
         ConnectionActivity sa = new ConnectionActivity();
-        Intent intent = new Intent(MainActivity.this,sa.getClass());
+        Intent intent = new Intent(MainActivity.this, sa.getClass());
         MainActivity.this.startActivity(intent);
-
     }
 
 }

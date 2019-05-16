@@ -20,17 +20,6 @@
     <string name="btnConnectAccount">Se connecter</string>
 
 
-
-
-    <!-- Personal recipe page 1-->
-    <string name="titlePersonalRecipe">Veuillez remplir le formulaire suivant afin de commander un produit 100% personalisé.</string>
-    <string name="lblAge">Age:</string>
-    <string name="lblSkinType">Type de peau:</string>
-    <string name="lblWorkplaceEnvironment">Envrionnement de travail</string>
-
-
-
-
     <!-- Commandes -->
     <string name="cart_cancel_button">Supprimer</string>
     <string name="cancel_order_btn">Annuler la commande</string>
@@ -47,12 +36,6 @@
     <string name="txtButtonProductAddCart">Ajouter au panier</string>
     <string name="stateAvailable">En stock</string>
     <string name="stateUnavailable">En rupture de stock</string>
-
-
-    <string name="hintEmail">Ex: lolipop3000@gmail.com</string>
-    <string name="hintSecQuestion">Ex: Un chat</string>
-    <string name="btnCreateAccount">Crée un compte</string>
-    <string name="btnConnectAccount">Se connecter</string>
 
     <!-- Form page -->
     <string name="titleFormCustomRecipe">Recette personnalisée</string>

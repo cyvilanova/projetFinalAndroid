@@ -1,7 +1,6 @@
 package com.example.quintessentiel;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.support.annotation.RequiresApi;

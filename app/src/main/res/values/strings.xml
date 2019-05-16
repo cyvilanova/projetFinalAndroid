@@ -49,7 +49,6 @@
     <string name="error_quantity">La quantité doit être plus grande que zéro.</string>
     <string name="error_age">Doit se situer entre 0 et 100 ans.</string>
     <string name="error_empty_field">Ce champ ne peut pas être vide.</string>
-    <string name="confirm_form_sent">Demande de produit personnalisée envoyée! Vous devriez avoir des nouvelles d\'ici quelques jours.</string>
     <string name="lblConfirmationProduct">Confirmation</string>
     <string name="lblDescConfirmationProduct">Confirmer les informations entrées ci-dessous pour envoyer la demande à Quintessentiel.</string>
 

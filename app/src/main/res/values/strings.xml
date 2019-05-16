@@ -19,6 +19,7 @@
     <string name="btnCreateAccount">Créer un compte</string>
     <string name="btnConnectAccount">Se connecter</string>
 
+
     <!-- Catalog Page -->
     <string name="txtProductTitle">Product Title PlaceHolder</string>
     <string name="lblProductPrice">Prix: </string>
@@ -52,6 +53,7 @@
  
     <string name="confirm_form_sent">Demande de produit personnalisée envoyée! Vous devriez avoir des nouvelles d\'ici quelques jours.</string>
 
+
     <!-- Menu -->
     <string name="welcomeName">Bonjour %1$s !</string>
     <string name="notConnectedWelcome">Vous n\'êtes pas connecté</string>
@@ -70,11 +72,6 @@
     <string name="order_details">Détails de la commande</string>
     <string name="lblConfirmationProduct">Confirmation</string>
     <string name="lblDescConfirmationProduct">Confirmer les informations entrées ci-dessous pour envoyer la demande à Quintessentiel.</string>
-
-    <!-- Noptifications -->
-    <string name="notificationTitle">Revenez-nous voir!</string>
-    <string name="notificationDesc">Au plaisir de vous revoir!</string>
-
 
     <!-- Noptifications -->
     <string name="notificationTitle">Revenez-nous voir!</string>

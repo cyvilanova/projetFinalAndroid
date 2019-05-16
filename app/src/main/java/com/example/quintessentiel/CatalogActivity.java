@@ -57,6 +57,7 @@ public class CatalogActivity extends BaseActivity {
 
     }
 
+    //Product adapter that generates rows of products
     public class ProductAdapter extends ArrayAdapter<Product> {
         Context context;
         ArrayList<Product> products;

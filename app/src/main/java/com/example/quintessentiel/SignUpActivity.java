@@ -28,9 +28,10 @@ public class SignUpActivity extends BaseActivity {
         super.onCreateDrawer(true);
 
 
+
         FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
         btnSideMenu.setVisibility(View.INVISIBLE);
-        
+
         ctrlUser = new CtrlUser(this);
         populateSecurityQuestions();
 

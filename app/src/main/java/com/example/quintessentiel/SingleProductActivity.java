@@ -1,22 +1,5 @@
 package com.example.quintessentiel;
 
-/**
- * Fichier: SingleProductActivity.java
- * Auteur: Philippe Audit-Allaire
- * Fonctionnalité: Activity that generates and handles a single product from the catalog
- * Date : 16-5-2019
- *
- * Vérification :
- * Date               Nom                   Approuvé
- *
- * Historique de modifications :
- * Date               Nom     Description
- * 11-5-2019          PAA      Création
- * 12-5-2019          PAA      Ajout des styles
- * 13-5-2019          PAA      Ajout image
- * 15-5-2019          PAA      Ajout de l'ajout au panier
- */
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.content.SharedPreferences;
@@ -39,6 +22,22 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Fichier: SingleProductActivity.java
+ * Auteur: Philippe Audit-Allaire
+ * Fonctionnalité: Activity that generates and handles a single product from the catalog
+ * Date : 16-5-2019
+ *
+ * Vérification :
+ * Date               Nom                   Approuvé
+ *
+ * Historique de modifications :
+ * Date               Nom     Description
+ * 11-5-2019          PAA      Création
+ * 12-5-2019          PAA      Ajout des styles
+ * 13-5-2019          PAA      Ajout image
+ * 15-5-2019          PAA      Ajout de l'ajout au panier
+ */
 public class SingleProductActivity extends BaseActivity {
 
     @Override
@@ -117,9 +116,7 @@ public class SingleProductActivity extends BaseActivity {
         Order newOrder = new Order(state,productToAdd,id_client,method,tps,tvq,date,qty);
         MgrOrder orderManager = new MgrOrder(getApplicationContext());
 
-        orderManager.addOrder(newOrder);
-
-
+        orderManager.insertOrder(newOrder);
     }
 
 }

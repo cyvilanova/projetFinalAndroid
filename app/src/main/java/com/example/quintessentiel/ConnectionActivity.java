@@ -78,14 +78,12 @@ public class ConnectionActivity extends BaseActivity {
                                 Toast.makeText(getBaseContext(), "Mauvais renseignements", Toast.LENGTH_LONG).show();
                             }
 
-                        if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
-                            final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 500);
-                            tg.startTone(ToneGenerator.TONE_PROP_BEEP);
-                            ConnectionActivity.super.setUserName(usernameVal);
-                            loadCatalogPage();
+                            if (ctrlUser.checkCredentials(usernameVal, passwordVal)) {
+                                ConnectionActivity.super.setUserName(usernameVal);
+                                loadCatalogPage();
+                            }
                         }
                     }
-
                 }
             });
 

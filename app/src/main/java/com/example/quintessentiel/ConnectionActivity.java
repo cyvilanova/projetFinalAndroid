@@ -15,6 +15,8 @@ package com.example.quintessentiel;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.media.AudioManager;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.Bundle;
@@ -77,6 +79,11 @@ public class ConnectionActivity extends BaseActivity {
                                 Toast.makeText(getBaseContext(), "Mauvais renseignements", Toast.LENGTH_LONG).show();
                             }
 
+                        if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
+                            final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 500);
+                            tg.startTone(ToneGenerator.TONE_PROP_BEEP);
+                            ConnectionActivity.super.setUserName(usernameVal);
+                            loadCatalogPage();
                         }
                     }
 

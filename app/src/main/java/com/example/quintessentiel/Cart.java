@@ -31,6 +31,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.quintessentiel.Order.MgrOrder;
 import com.example.quintessentiel.Order.Order;
 import com.example.quintessentiel.Product.Product;
 
@@ -48,7 +49,8 @@ public class Cart extends BaseActivity {
         super.onCreateDrawer(true);
 
         order = (Order) getIntent().getSerializableExtra("order");
-
+        MgrOrder mgrOrder = new MgrOrder();
+        order = mgrOrder.getInfoOrder(1);
         if (order == null) {
             Log.d("FML", "onCreate: ORDER == NULL");
             finish();

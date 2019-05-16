@@ -67,6 +67,7 @@ public class CatalogActivity extends BaseActivity {
                 CatalogActivity.this.startActivity(myIntent);
             }
         });
+        //sortImg.setOnClickListener();
 
     }
 

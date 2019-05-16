@@ -1,6 +1,5 @@
 package com.example.quintessentiel;
 
-
 /**
  * Fichier: SingleProductActivity.java
  * Auteur: Philippe Audit-Allaire
@@ -20,6 +19,9 @@ package com.example.quintessentiel;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +29,11 @@ import android.widget.Button;
 import com.example.quintessentiel.Order.MgrOrder;
 import com.example.quintessentiel.Order.Order;
 import com.example.quintessentiel.Product.Product;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -81,6 +88,7 @@ public class SingleProductActivity extends BaseActivity {
         return path;
     }
 
+
     /**
      * Adds the current product to current user's cart.
      */
@@ -105,10 +113,12 @@ public class SingleProductActivity extends BaseActivity {
         ArrayList<Integer> qty = new ArrayList<>();
         qty.add(1); //adds the quantity
 
+
         Order newOrder = new Order(state,productToAdd,id_client,method,tps,tvq,date,qty);
         MgrOrder orderManager = new MgrOrder();
 
         orderManager.addOrder(newOrder);
+
 
     }
 

@@ -12,13 +12,22 @@
  ****************************************/
 package com.example.quintessentiel;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.media.RingtoneManager;
 import android.os.Build;
+import android.os.Handler;
+import android.content.res.Configuration;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -83,11 +92,23 @@ public class BaseActivity extends AppCompatActivity {
                             Intent intentForm = new Intent(getApplicationContext(), FormActivity.class);
                             startActivity(intentForm);
                             break;
-                        case "Notifications":
-                            //Open page here
+                        case "Mode nuit":
+                            changeTheme();
+                            Intent reloadIntent = getIntent();
+                            finish();
+                            startActivity(reloadIntent);
                             break;
                         case "Déconnexion":
-                            //Open page here
+                            //Clears the preferences
+                            SharedPreferences prefs;
+                            prefs = getApplicationContext().getSharedPreferences("UserPref", 0);
+                            SharedPreferences.Editor editor = prefs.edit();
+                            editor.clear().commit();
+
+                            Intent intentLogout = new Intent(getApplicationContext(), ConnectionActivity.class);
+                            startActivity(intentLogout);
+
+                            notification();
                             break;
                         case "Mes commandes":
                             Intent myOrders = new Intent(getApplicationContext(), MyOrders.class);
@@ -107,7 +128,28 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * Sets the username to display on the side bar
+     * Applies new theme
+     */
+    private void changeTheme() {
+        int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        System.out.println(currentNightMode);
+        switch (currentNightMode) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+
+            case Configuration.UI_MODE_NIGHT_NO:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+        }
+    }
+
+    /**
+     * Displays the welcome message
      */
     public void setDisplayUserName(){
         TextView lblName = (TextView) findViewById(R.id.nav_header_textView);
@@ -130,5 +172,46 @@ public class BaseActivity extends AppCompatActivity {
      */
     public void setUserName(String username){
         this.userName = username;
+    }
+
+    /**
+     * Show a notification
+     */
+    public void notification(){
+        int NOTIFICATION_ID = 1;
+        String NOTIFICATION_CHANNEL_ID = "basic";
+
+
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        //PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),0, ConnectionActivity,PendingIntent.FLAG_UPDATE_CURRENT);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Quintessentiel", NotificationManager.IMPORTANCE_DEFAULT);
+
+            // Configure the notification channel.
+            notificationChannel.setDescription(getString(R.string.notificationDesc));
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.setVibrationPattern(new long[]{0, 1000, 500, 1000});
+            notificationChannel.enableVibration(true);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), NOTIFICATION_CHANNEL_ID)
+                .setVibrate(new long[]{0, 100, 100, 100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle(getString(R.string.notificationTitle))
+                .setContentText(getString(R.string.notificationDesc));
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                notificationManager.notify(NOTIFICATION_ID, builder.build());
+            }
+
+        }, 5000); // 5000ms delay
     }
 }

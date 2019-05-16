@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Button;
+
 
 import com.example.quintessentiel.Product.Product;
 
@@ -24,6 +26,7 @@ public class SingleProductActivity extends BaseActivity {
         TextView price = findViewById(R.id.productPrice);
         TextView description = findViewById(R.id.productDescription);
         TextView state = findViewById(R.id.lblproductState);
+        Button addProduct = findViewById(R.id.btnAddCart);
 
         title.setText(product.getName());
         picture.setImageResource(getDrawable(product));
@@ -36,9 +39,6 @@ public class SingleProductActivity extends BaseActivity {
             state.setText("En rupture de stock.");
         }
 
-
-
-
     }
 
     public int getDrawable(Product product){
@@ -47,4 +47,9 @@ public class SingleProductActivity extends BaseActivity {
 
         return path;
     }
+
+    public void addToCart(){
+        
+    }
+
 }

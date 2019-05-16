@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -174,5 +175,11 @@ public class MgrProduct {
 
         this.httpRequest.setHttpUrlConnection(Constants.HTTP_URL_CONNECTION_UPDATE);
         this.httpRequest.executeQuery(query, jsonParameters);
+    }
+
+    public ArrayList<Product> sortUpToLow(){
+        ArrayList<Product> fullList = this.getProducts();
+
+        Collections.sort(fullList);
     }
 }

@@ -40,6 +40,7 @@ public class CatalogActivity extends BaseActivity {
         mgrProduct.getAllProducts();
         products = mgrProduct.getProducts();
         listView = findViewById(R.id.productList);
+        ImageView sortImg = findViewById(R.id.sortIcon);
 
         ProductAdapter adapter = new ProductAdapter(this, products);
         listView.setAdapter(adapter);
@@ -54,6 +55,7 @@ public class CatalogActivity extends BaseActivity {
                 CatalogActivity.this.startActivity(myIntent);
             }
         });
+        sortImg.setOnClickListener();
 
     }
 

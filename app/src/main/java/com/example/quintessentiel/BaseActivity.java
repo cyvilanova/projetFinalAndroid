@@ -12,11 +12,21 @@
  ****************************************/
 package com.example.quintessentiel;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -96,6 +106,8 @@ public class BaseActivity extends AppCompatActivity {
 
                             Intent intentLogout = new Intent(getApplicationContext(), ConnectionActivity.class);
                             startActivity(intentLogout);
+
+                            notification();
                             break;
                         case "Mes commandes":
                             Intent myOrders = new Intent(getApplicationContext(), MyOrders.class);
@@ -138,5 +150,46 @@ public class BaseActivity extends AppCompatActivity {
      */
     public void setUserName(String username){
         this.userName = username;
+    }
+
+    /**
+     * Show a notification
+     */
+    public void notification(){
+        int NOTIFICATION_ID = 1;
+        String NOTIFICATION_CHANNEL_ID = "basic";
+
+
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        //PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),0, ConnectionActivity,PendingIntent.FLAG_UPDATE_CURRENT);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Quintessentiel", NotificationManager.IMPORTANCE_DEFAULT);
+
+            // Configure the notification channel.
+            notificationChannel.setDescription(getString(R.string.notificationDesc));
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.setVibrationPattern(new long[]{0, 1000, 500, 1000});
+            notificationChannel.enableVibration(true);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), NOTIFICATION_CHANNEL_ID)
+                .setVibrate(new long[]{0, 100, 100, 100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle(getString(R.string.notificationTitle))
+                .setContentText(getString(R.string.notificationDesc));
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                notificationManager.notify(NOTIFICATION_ID, builder.build());
+            }
+
+        }, 5000); // 5000ms delay
     }
 }

@@ -74,5 +74,9 @@
     <string name="my_orders">Mes commandes</string>
     <string name="confirm_form_sent">Demande de produit personnalisée envoyée! Vous devriez avoir des nouvelles d\'ici quelques jours.</string>
 
+    <!-- Noptifications -->
+    <string name="notificationTitle">Revenez-nous voir!</string>
+    <string name="notificationDesc">Au plaisir de vous revoir!</string>
+
 
 </resources>

@@ -136,6 +136,7 @@ CREATE TABLE `order` (
 	tps DECIMAL(7,2) NOT NULL DEFAULT 0.00,
 	tvq DECIMAL(7,2) NOT NULL DEFAULT 0.00,
 	total DECIMAL(7,2) NOT NULL DEFAULT 0.00,
+  date DATE NOT NULL,
 	PRIMARY KEY (id_order),
 	FOREIGN KEY (id_user) REFERENCES user(id_user),
 	FOREIGN KEY (id_client) REFERENCES client(id_client),

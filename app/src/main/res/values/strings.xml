@@ -14,20 +14,12 @@
     <string name="responseSecQuestion">Réponse</string>
     <string name="hintUsername">Ex: Gazelle123</string>
     <string name="hintPassword">Ex: Abc123X</string>
-
-    <!-- Commandes -->
-    <string name="cart_cancel_button">Supprimer</string>
-    <string name="cancel_order_btn">Annuler la commande</string>
-    <string name="command_btn">Commander</string>
+    <string name="hintEmail">Ex: lolipop3000@gmail.com</string>
+    <string name="hintSecQuestion">Ex: Un chat</string>
+    <string name="btnCreateAccount">Créer un compte</string>
+    <string name="btnConnectAccount">Se connecter</string>
 
     <!-- Catalog Page -->
-    <string name="txtCategory">Catégorie : </string>
-    <string-array name="spinnerCategoryName">
-        <item>category1</item>
-        <item>category2</item>
-        <item>category3</item>
-        <item>category4</item>
-    </string-array>
     <string name="txtProductTitle">Product Title PlaceHolder</string>
     <string name="lblProductPrice">Prix: </string>
     <string name="productPrice">0.00$</string>
@@ -37,11 +29,6 @@
     <string name="txtButtonProductAddCart">Ajouter au panier</string>
     <string name="stateAvailable">En stock</string>
     <string name="stateUnavailable">En rupture de stock</string>
-
-    <string name="hintEmail">Ex: lolipop3000@gmail.com</string>
-    <string name="hintSecQuestion">Ex: Un chat</string>
-    <string name="btnCreateAccount">Crée un compte</string>
-    <string name="btnConnectAccount">Se connecter</string>
 
     <!-- Form page -->
     <string name="titleFormCustomRecipe">Recette personnalisée</string>
@@ -62,21 +49,31 @@
     <string name="error_quantity">La quantité doit être plus grande que zéro.</string>
     <string name="error_age">Doit se situer entre 0 et 100 ans.</string>
     <string name="error_empty_field">Ce champ ne peut pas être vide.</string>
+    <string name="lblConfirmationProduct">Confirmation</string>
+    <string name="lblDescConfirmationProduct">Confirmer les informations entrées ci-dessous pour envoyer la demande à Quintessentiel.</string>
 
     <!-- Menu -->
     <string name="welcomeName">Bonjour %1$s !</string>
     <string name="notConnectedWelcome">Vous n\'êtes pas connecté</string>
+
+
+    <!-- Commandes -->
+    <string name="cart_cancel_button">Supprimer</string>
+    <string name="cancel_order_btn">Annuler la commande</string>
+    <string name="command_btn">Commander</string>
     <string name="itemCatalog">Catalogue</string>
     <string name="itemCart">Mon panier</string>
     <string name="itemPersonalisedRecipe">Recette personalisée</string>
-    <string name="itemNotification">Notifications</string>
+    <string name="itemDarkTheme">Mode nuit</string>
     <string name="itemLogOut">Déconnexion</string>
     <string name="my_orders">Mes commandes</string>
+    <string name="order">Commander</string>
+    <string name="order_details">Détails de la commande</string>
     <string name="confirm_form_sent">Demande de produit personnalisée envoyée! Vous devriez avoir des nouvelles d\'ici quelques jours.</string>
+
 
     <!-- Noptifications -->
     <string name="notificationTitle">Revenez-nous voir!</string>
     <string name="notificationDesc">Au plaisir de vous revoir!</string>
-
 
 </resources>

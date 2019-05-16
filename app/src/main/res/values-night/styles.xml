@@ -2,10 +2,18 @@
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#45f42d</item>
-        <item name="colorPrimaryDark">#ddd323</item>
-        <item name="colorAccent">#ddd323</item>
-        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/darkGreen</item>
+        <item name="colorAccent">@color/greenAccent</item>
+        <item name="colorButtonNormal">@color/darkGreen</item>
+        <item name="android:textColor">@color/lightBeige</item>
+        <item name="android:editTextColor">@color/lightBeige</item>
+        <item name="android:textColorPrimary">@color/lightBeige</item>
+        <item name="android:textColorSecondary">@color/lightBeige</item>
+        <item name="android:textColorTertiary">@color/lightBeige</item>
+        <item name="android:textColorPrimaryInverse">@color/lightBeige</item>
+        <item name="android:textColorSecondaryInverse">@color/lightBeige</item>
+        <item name="android:textColorTertiaryInverse">@color/lightBeige</item>
     </style>
 
 </resources>

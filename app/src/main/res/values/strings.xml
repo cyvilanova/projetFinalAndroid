@@ -21,11 +21,14 @@
 
 
 
+
     <!-- Personal recipe page 1-->
     <string name="titlePersonalRecipe">Veuillez remplir le formulaire suivant afin de commander un produit 100% personalisé.</string>
     <string name="lblAge">Age:</string>
     <string name="lblSkinType">Type de peau:</string>
     <string name="lblWorkplaceEnvironment">Envrionnement de travail</string>
+
+
 
 
     <!-- Commandes -->
@@ -45,6 +48,33 @@
     <string name="stateAvailable">En stock</string>
     <string name="stateUnavailable">En rupture de stock</string>
 
+
+    <string name="hintEmail">Ex: lolipop3000@gmail.com</string>
+    <string name="hintSecQuestion">Ex: Un chat</string>
+    <string name="btnCreateAccount">Crée un compte</string>
+    <string name="btnConnectAccount">Se connecter</string>
+
+    <!-- Form page -->
+    <string name="titleFormCustomRecipe">Recette personnalisée</string>
+    <string name="descCustomRecipe">Veuillez remplir le formulaire suivant pour recevoir par courriel la suggestion d\'un produit 100% personnalisé.</string>
+    <string name="lblAge">Âge</string>
+    <string name="lblSkinType">Type de peau</string>
+    <string name="lblWorkEnvironment">Environnement de travail</string>
+    <string name="hintWorkEnvironment">Décrivez votre environnement de travail.</string>
+    <string name="lblEffect">Effet escompté</string>
+    <string name="lblQuantity">Quantité</string>
+    <string name="lblMl">mL</string>
+    <string name="lblFragrance">Fragrance</string>
+    <string name="lblProductType">Type de produit</string>
+    <string name="lblMoreInfos">Informations supplémentaires</string>
+    <string name="hintMoreInfos">Demande spéciale, allergie, commentaire, etc.</string>
+    <string name="btnConfirm">Confirmer</string>
+    <string name="btnSendForm">Envoyer</string>
+    <string name="error_quantity">La quantité doit être plus grande que zéro.</string>
+    <string name="error_age">Doit se situer entre 0 et 100 ans.</string>
+    <string name="error_empty_field">Ce champ ne peut pas être vide.</string>
+
+
     <!-- Menu -->
     <string name="welcomeName">Bonjour %1$s !</string>
     <string name="notConnectedWelcome">Vous n\'êtes pas connecté</string>
@@ -54,5 +84,6 @@
     <string name="itemNotification">Notifications</string>
     <string name="itemLogOut">Déconnexion</string>
     <string name="my_orders">Mes commandes</string>
+    <string name="confirm_form_sent">Demande de produit personnalisée envoyée! Vous devriez avoir des nouvelles d\'ici quelques jours.</string>
 
 </resources>

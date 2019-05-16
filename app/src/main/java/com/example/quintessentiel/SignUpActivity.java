@@ -26,8 +26,6 @@ public class SignUpActivity extends BaseActivity {
         setContentView(R.layout.sign_up);
         super.onCreateDrawer(true);
 
-
-
         FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
         btnSideMenu.setVisibility(View.INVISIBLE);
 

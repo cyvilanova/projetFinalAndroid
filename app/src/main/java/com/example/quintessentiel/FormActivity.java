@@ -1,5 +1,7 @@
 package com.example.quintessentiel;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -10,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.quintessentiel.Form.MgrForm;
 
@@ -17,6 +20,8 @@ import java.util.HashMap;
 
 
 public class FormActivity extends BaseActivity {
+
+    Integer idClient = 0;
 
     EditText inputAge;
     EditText inputQuantity;
@@ -33,6 +38,10 @@ public class FormActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_custom_recipe);
         super.onCreateDrawer(true);
+
+        SharedPreferences prefs;
+        prefs = this.getSharedPreferences("UserPref", 0);
+        idClient = prefs.getInt("userId", 0);
 
         inputAge = (EditText) findViewById(R.id.txtAge);
         inputQuantity = (EditText) findViewById(R.id.txtQuantity);
@@ -69,7 +78,7 @@ public class FormActivity extends BaseActivity {
     }
 
     /**
-     *
+     * Checks if data is correct
      */
     public void confirmFormView() {
         final String errorMessage = getString(R.string.error_empty_field);
@@ -88,8 +97,8 @@ public class FormActivity extends BaseActivity {
             inputAge.requestFocus();
             inputAge.setError(errorMessage);
         } else if (Integer.parseInt(age) > 100) {
-            inputQuantity.requestFocus();
-            inputQuantity.setError(getString(R.string.error_age));
+            inputAge.requestFocus();
+            inputAge.setError(getString(R.string.error_age));
         } else if (quantity.length() == 0) {
             inputQuantity.requestFocus();
             inputQuantity.setError(errorMessage);
@@ -97,6 +106,7 @@ public class FormActivity extends BaseActivity {
             inputQuantity.requestFocus();
             inputQuantity.setError(getString(R.string.error_quantity));
         } else {
+            formData.put("idClient", idClient.toString());
             formData.put("age", age);
             formData.put("skintype", skintype);
             formData.put("productType", productType);
@@ -111,34 +121,35 @@ public class FormActivity extends BaseActivity {
     }
 
     /**
+     * Display the informations entered by the user to confirm
      * @param formData
      */
     public void confirmFormData(HashMap<String, String> formData) {
         setContentView(R.layout.form_confirmation_data);
 
         EditText txtAge = (EditText) findViewById(R.id.txtAgeFC);
-        txtAge.setText(Integer.parseInt(formData.get("age")));
+        txtAge.setText(formData.get("age"));
 
         EditText txtSkinType = (EditText) findViewById(R.id.cbSkinTypeFC);
-        txtSkinType.setText(Integer.parseInt(formData.get("skintype")));
+        txtSkinType.setText(formData.get("skintype"));
 
         EditText txtProduct = (EditText) findViewById(R.id.cbProductTypeFC);
-        txtProduct.setText(Integer.parseInt(formData.get("productType")));
+        txtProduct.setText(formData.get("productType"));
 
         EditText txtFragrance = (EditText) findViewById(R.id.cbFragranceFC);
-        txtFragrance.setText(Integer.parseInt(formData.get("fragrance")));
+        txtFragrance.setText(formData.get("fragrance"));
 
         EditText txtEffect = (EditText) findViewById(R.id.cbEffectFC);
-        txtEffect.setText(Integer.parseInt(formData.get("effect")));
+        txtEffect.setText(formData.get("effect"));
 
         EditText txtQuantity = (EditText) findViewById(R.id.txtQuantityFC);
-        txtQuantity.setText(Integer.parseInt(formData.get("quantity")));
+        txtQuantity.setText(formData.get("quantity"));
 
         EditText txtMoreInfos = (EditText) findViewById(R.id.txtMoreInfosFC);
-        txtMoreInfos.setText(Integer.parseInt(formData.get("moreInfos")));
+        txtMoreInfos.setText(formData.get("moreInfos"));
 
         EditText txtWork = (EditText) findViewById(R.id.txtWorkEnvironmentFC);
-        txtWork.setText(Integer.parseInt(formData.get("workEnvironment")));
+        txtWork.setText(formData.get("workEnvironment"));
 
         Button btnSend = (Button) findViewById(R.id.btnSendForm);
         btnSend.setOnClickListener(new View.OnClickListener() {
@@ -147,6 +158,9 @@ public class FormActivity extends BaseActivity {
             public void onClick(View v) {
                 MgrForm mgrForm = new MgrForm();
                 mgrForm.insertForm(formData);
+                Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
+                startActivity(myIntent);
+                Toast.makeText(getApplicationContext(),getString(R.string.confirm_form_sent),Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -24,17 +24,13 @@ import android.widget.TextView;
 import java.sql.SQLOutput;
 
 
-public class BaseActivity extends AppCompatActivity
-{
+public class BaseActivity extends AppCompatActivity {
 
     private static String userName;
 
-    protected void onCreateDrawer(boolean canOpen){
+    protected void onCreateDrawer(boolean canOpen) {
 
-        if(canOpen){
-
-
-
+        if (canOpen) {
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
             setSupportActionBar(toolbar);
@@ -48,14 +44,10 @@ public class BaseActivity extends AppCompatActivity
                     // open right drawer
                     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                     drawer.openDrawer(GravityCompat.END);
-
-
                     View view = getCurrentFocus();
                 }
 
             });
-
-
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.bringToFront();
@@ -64,8 +56,7 @@ public class BaseActivity extends AppCompatActivity
                 @RequiresApi(api = Build.VERSION_CODES.N)
                 public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-
-                    switch(menuItem.toString()){
+                    switch (menuItem.toString()) {
                         case "Catalogue":
                             Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
                             startActivity(myIntent);
@@ -78,7 +69,7 @@ public class BaseActivity extends AppCompatActivity
                             startActivity(topass);
                             break;
                         case "Recette personalisée":
-                            Intent intentForm = new Intent(BaseActivity.this, FormActivity.class);
+                            Intent intentForm = new Intent(getApplicationContext(), FormActivity.class);
                             startActivity(intentForm);
                             break;
                         case "Notifications":
@@ -97,8 +88,7 @@ public class BaseActivity extends AppCompatActivity
                 }
             });
 
-        }
-        else{
+        } else {
             //Toast here to explain why you can't open it
             //a str could be passed to onCreateDrawer if necessary in order to
             //create custom messages
@@ -108,22 +98,21 @@ public class BaseActivity extends AppCompatActivity
 
     }
 
-    public void setDisplayUserName(){
+    public void setDisplayUserName() {
         TextView lblName = (TextView) findViewById(R.id.nav_header_textView);
 
         String content;
 
-        if(userName != null){
-            content = getString(R.string.welcomeName,this.userName);
-        }
-        else{
+        if (userName != null) {
+            content = getString(R.string.welcomeName, this.userName);
+        } else {
             content = getString(R.string.notConnectedWelcome);
         }
 
         lblName.setText(content);
     }
 
-    public void setUserName(String username){
+    public void setUserName(String username) {
         this.userName = username;
     }
 }

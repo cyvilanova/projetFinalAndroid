@@ -39,12 +39,14 @@ public class MgrForm {
 
         Form newForm = createObjectForm(formData);
 
-        String query = "INSERT INTO form(id_user, age, skintype, work_environment, desired_effect, quantity, fragrance, more_infos) " +
-                "VALUES(:id_user, :age, :skintype, :work_environment, :desired_effect, :quantity, :fragrance, :more_infos)";
+        String query = "INSERT INTO form_answers(id_user, age, skintype, product_type, work_environment, desired_effect, quantity, fragrance, more_infos) " +
+                "VALUES(:id_user, :age, :skintype, :product_type, :work_environment, :desired_effect, :quantity, :fragrance, :more_infos)";
+
         Map<String, Object> parameters = new HashMap<>();
         parameters.put(":id_user", newForm.getIdUser());
         parameters.put(":age", newForm.getAge());
         parameters.put(":skintype", newForm.getSkintype());
+        parameters.put(":product_type", newForm.getProductType());
         parameters.put(":work_environment", newForm.getWorkEnvironment());
         parameters.put(":desired_effect", newForm.getEffect());
         parameters.put(":quantity", newForm.getQuantity());
@@ -64,7 +66,7 @@ public class MgrForm {
      */
     public Form createObjectForm(HashMap<String, String> formData) {
 
-        Integer idUser = 1;
+        Integer idUser = Integer.parseInt(formData.get("idClient"));
         Integer age = Integer.parseInt(formData.get("age"));
         Integer quantity = Integer.parseInt(formData.get("quantity"));
         String skintype = formData.get("skintype");

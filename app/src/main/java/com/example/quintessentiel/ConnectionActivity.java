@@ -14,6 +14,10 @@ package com.example.quintessentiel;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -64,6 +68,9 @@ public class ConnectionActivity extends BaseActivity {
                     }
                     else{   //Fields are all filled
 
+                        if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
+                            final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 500);
+                            tg.startTone(ToneGenerator.TONE_PROP_BEEP);
                         if(ctrlUser.checkCredentials(usernameVal,passwordVal)){ //Connection successfull
                             ConnectionActivity.super.setUserName(usernameVal);
                             loadCatalogPage();

@@ -1,7 +1,7 @@
 /****************************************
  Fichier : MgrUser.java
  Auteure : David Gaulin
- Fonctionnalité : A6 - Login
+ Fonctionnalité : M1 - Authentification && M2-Enregistrement
  Date : 2019-05-08
  Vérification :
  Date Nom Approuvé
@@ -42,7 +42,7 @@ public class MgrUser {
 
     /**
      * Adds a user into the database
-     * @param user
+     * @param user object to add
      */
     public boolean addUser(User user){
 
@@ -73,7 +73,7 @@ public class MgrUser {
 
     /**
      * Takes a username an checks if it exists in the database
-     * @param name
+     * @param name name of the user to check if exists
      * @return a bool telling if it exists or not
      */
     private boolean userExists(String name){
@@ -109,8 +109,8 @@ public class MgrUser {
     /**
      * Checks if the given password and name match
      * a user in the db
-     * @param name
-     * @param password
+     * @param name  of the user to check for
+     * @param password of the user to check for
      * @return the user's id in the db or 0 if not found
      */
     public boolean checkCredentials(String name,String password){
@@ -161,6 +161,10 @@ public class MgrUser {
         return false;
     }
 
+    /**
+     * Loads all the security questions from the DB
+     * @return an ArrayList of questions (Id,Question)
+     */
     public ArrayList<Question> getSecurityQuestions(){
 
         String query = "SELECT * FROM secret_question";
@@ -193,6 +197,10 @@ public class MgrUser {
         return questionList;
     }
 
+    /**
+     * Checks if the user is currently connected
+     * @return a boolean telling whether or not the user is connected
+     */
     public boolean checkIfConnected(){
         SharedPreferences prefs;
         prefs = this.ctx.getSharedPreferences("UserPref", 0); // 0 - for private mode

@@ -1,3 +1,15 @@
+/****************************************
+ Fichier : Question.java
+ Auteure : David Gaulin
+ Fonctionnalité : M1 - Login
+ Date : 2019-05-08
+ Vérification :
+ Date Nom Approuvé
+ =========================================================
+ Historique de modifications :
+ Date Nom Description
+ =========================================================
+ ****************************************/
 package com.example.quintessentiel.User;
 
 public class Question {

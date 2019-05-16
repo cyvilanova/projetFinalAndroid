@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ImageView;
 import com.example.quintessentiel.User.CtrlUser;
@@ -77,6 +78,11 @@ public class ConnectionActivity extends BaseActivity {
                                 Toast.makeText(getBaseContext(), "Mauvais renseignements", Toast.LENGTH_LONG).show();
                             }
 
+                        if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
+                            final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 500);
+                            tg.startTone(ToneGenerator.TONE_PROP_BEEP);
+                            ConnectionActivity.super.setUserName(usernameVal);
+                            loadCatalogPage();
                         }
                     }
 
@@ -100,6 +106,7 @@ public class ConnectionActivity extends BaseActivity {
 
             });
         }
+
     }
 
     /**
@@ -121,19 +128,19 @@ public class ConnectionActivity extends BaseActivity {
     }
 
     /**
-     * Brings the user to the Quintessential Facebook page
-     *
+     *  Brings the user to the Quintessential Facebook page
      * @param pageId id of the facebook page to load
      */
-    public void goToFacebook(String pageId) {
-        try {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/" + pageId));
+    public void goToFacebook(String pageId){
+        try{
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/"+pageId));
             startActivity(intent);
-        } catch (ActivityNotFoundException e) {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/" + pageId));
+        }catch (ActivityNotFoundException e){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/"+pageId));
             startActivity(intent);
         }
     }
+
 
 
 }

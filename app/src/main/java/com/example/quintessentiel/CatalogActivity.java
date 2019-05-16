@@ -1,5 +1,21 @@
 package com.example.quintessentiel;
 
+/**
+ * Fichier: CatalogActivity.java
+ * Auteur: Philippe Audit-Allaire
+ * Fonctionnalité: Activity that generates and handles the list of sellable products
+ * Date : 16-5-2019
+ *
+ * Vérification :
+ * Date               Nom                   Approuvé
+ *
+ * Historique de modifications :
+ * Date               Nom     Description
+ * 11-5-2019          PAA      Création
+ * 12-5-2019          PAA      Ajout product adapter
+ * 13-5-2019          PAA      Ajout image
+ * 15-5-2019          PAA      Fix format
+ */
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -75,6 +91,12 @@ public class CatalogActivity extends BaseActivity {
             this.products = products;
         }
 
+
+        /**
+         * Method that generates rows of products based on an arraylist of product
+         * @param position The position of the cursor, works as an iterator
+         *
+         */
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

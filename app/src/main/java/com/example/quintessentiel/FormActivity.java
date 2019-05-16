@@ -18,7 +18,19 @@ import com.example.quintessentiel.Form.MgrForm;
 
 import java.util.HashMap;
 
-
+/**
+ * Fichier: FormActivity.java
+ * Auteur: Cynthia Vilanova
+ * Fonctionnalité: Form for a custom product
+ * Date : 12-5-2019
+ *
+ * Vérification :
+ * Date               Nom     Approuvé
+ *
+ * Historique de modifications :
+ * Date               Nom     Description
+ * 12-5-2019          CV      Création
+ */
 public class FormActivity extends BaseActivity {
 
     Integer idClient = 0;

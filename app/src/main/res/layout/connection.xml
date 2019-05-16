@@ -83,8 +83,9 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
+                    android:textColor="@color/colorText"
                     android:textColorHint="@color/hintColor"
-                    />
+                    />z
 
                 <TextView
                     android:id="@+id/lblPassword"
@@ -112,6 +113,7 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
+                    android:textColor="@color/colorText"
                     android:textColorHint="@color/hintColor"/>
 
 

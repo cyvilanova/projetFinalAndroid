@@ -69,10 +69,12 @@
     <string name="itemCatalog">Catalogue</string>
     <string name="itemCart">Mon panier</string>
     <string name="itemPersonalisedRecipe">Recette personalisée</string>
-    <string name="itemNotification">Notifications</string>
+    <string name="itemDarkTheme">Mode nuit</string>
     <string name="itemLogOut">Déconnexion</string>
     <string name="my_orders">Mes commandes</string>
     <string name="confirm_form_sent">Demande de produit personnalisée envoyée! Vous devriez avoir des nouvelles d\'ici quelques jours.</string>
+    <string name="lblConfirmationProduct">Confirmation</string>
+    <string name="lblDescConfirmationProduct">Confirmer les informations entrées ci-dessous pour envoyer la demande à Quintessentiel.</string>
 
 
 </resources>

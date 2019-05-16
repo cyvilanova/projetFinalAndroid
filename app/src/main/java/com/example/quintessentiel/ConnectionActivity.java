@@ -71,14 +71,6 @@ public class ConnectionActivity extends BaseActivity {
         }
 
 
-        findViewById(R.id.toolBarLeftBlockImage).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-
     }
 
     /**

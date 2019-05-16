@@ -26,13 +26,14 @@ public class BaseActivity extends AppCompatActivity
 
     protected void onCreateDrawer(boolean canOpen){
 
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tb);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         if(canOpen){
 
-
-
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-            setSupportActionBar(toolbar);
             FrameLayout db = (FrameLayout) findViewById(R.id.drawer_button);
 
             db.setOnClickListener(new View.OnClickListener() {

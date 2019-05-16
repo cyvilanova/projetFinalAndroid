@@ -27,12 +27,10 @@ public class SignUpActivity extends BaseActivity {
         setContentView(R.layout.sign_up);
         super.onCreateDrawer(true);
 
-
-
         FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
         btnSideMenu.setVisibility(View.INVISIBLE);
 
-        ctrlUser = new CtrlUser(this);
+        this.ctrlUser = new CtrlUser(this);
         populateSecurityQuestions();
 
         findViewById(R.id.btnSignUp).setOnClickListener(new View.OnClickListener() {
@@ -88,12 +86,6 @@ public class SignUpActivity extends BaseActivity {
             }
         });
 
-        findViewById(R.id.toolBarLeftBlockImage).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 
     public void populateSecurityQuestions(){

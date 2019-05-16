@@ -39,6 +39,9 @@ public class SingleProductActivity extends BaseActivity {
             state.setText("En rupture de stock.");
         }
 
+
+
+
     }
 
     public int getDrawable(Product product){
@@ -49,7 +52,7 @@ public class SingleProductActivity extends BaseActivity {
     }
 
     public void addToCart(){
-        
+
     }
 
 }

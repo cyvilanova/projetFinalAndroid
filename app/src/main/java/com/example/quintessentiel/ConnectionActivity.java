@@ -1,12 +1,13 @@
 package com.example.quintessentiel;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.example.quintessentiel.User.CtrlUser;
 
@@ -20,6 +21,7 @@ public class ConnectionActivity extends BaseActivity {
         setContentView(R.layout.connection);
         super.onCreateDrawer(true);
 
+        ImageView facebookLink = findViewById(R.id.facebook);
         FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
         btnSideMenu.setVisibility(View.INVISIBLE);
 
@@ -79,6 +81,13 @@ public class ConnectionActivity extends BaseActivity {
             }
         });
 
+        facebookLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToFacebook("316220211894882");
+            }
+        });
+
 
     }
 
@@ -98,6 +107,20 @@ public class ConnectionActivity extends BaseActivity {
 
         Intent intent = new Intent(ConnectionActivity.this,sa.getClass());
         ConnectionActivity.this.startActivity(intent);
+    }
+
+    /**
+     *  Brings the user to the Quintessential Facebook page
+     * @param pageId id of the facebook page to load
+     */
+    public void goToFacebook(String pageId){
+        try{
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/"+pageId));
+            startActivity(intent);
+        }catch (ActivityNotFoundException e){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/"+pageId));
+            startActivity(intent);
+        }
     }
 
 

@@ -177,9 +177,5 @@ public class MgrProduct {
         this.httpRequest.executeQuery(query, jsonParameters);
     }
 
-    public ArrayList<Product> sortUpToLow(){
-        ArrayList<Product> fullList = this.getProducts();
 
-        Collections.sort(fullList);
-    }
 }

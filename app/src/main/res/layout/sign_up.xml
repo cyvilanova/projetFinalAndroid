@@ -89,7 +89,6 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
-                    android:theme="@style/EditTextColorCustom"
                     android:textColorHint="@color/hintColor"
                     />
 
@@ -118,7 +117,6 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
-                    android:theme="@style/EditTextColorCustom"
                     android:textColorHint="@color/hintColor"/>
 
                 <TextView
@@ -145,7 +143,6 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
-                    android:theme="@style/EditTextColorCustom"
                     android:textColorHint="@color/hintColor"/>
 
                 <TextView
@@ -172,7 +169,6 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
-                    android:theme="@style/EditTextColorCustom"
                     android:textColorHint="@color/hintColor"/>
 
                 <TextView
@@ -216,7 +212,6 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
-                    android:theme="@style/EditTextColorCustom"
                     android:textColorHint="@color/hintColor"/>
 
                 <Button

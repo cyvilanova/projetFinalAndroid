@@ -14,6 +14,7 @@ package com.example.quintessentiel;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -30,9 +31,11 @@ public class SignUpActivity extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
         super.onCreateDrawer(true);
+
 
         //Hide the side bar menu
         FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
@@ -63,6 +66,7 @@ public class SignUpActivity extends BaseActivity {
                 Integer securityQuestionVal = ((Question) securityQuestion.getSelectedItem()).getIdQuestion();
                 String securityAnswerVal = securityAnswer.getText().toString();
 
+
                 //If empty field(s)
                 if(usernameVal.equals("") || emailVal.equals("") || passwordVal.equals("") || confirmPasswordVal.equals("") || securityAnswerVal.equals("") || securityQuestionVal.equals("")){
                     Toast.makeText(getBaseContext(), "Veuillez remplir tous les champs", Toast.LENGTH_LONG).show();
@@ -83,6 +87,7 @@ public class SignUpActivity extends BaseActivity {
                     }
                     else{   //Passwords not matching
                         Toast.makeText(getBaseContext(), "Les mots de passes ne concordent pas", Toast.LENGTH_LONG).show();
+
                     }
                 }
             }
@@ -105,7 +110,7 @@ public class SignUpActivity extends BaseActivity {
         Spinner spinnerSecurityQuestion = findViewById(R.id.spinnerSignUpQuestion);
         ArrayList<Question> arraySecurityQuestion = this.ctrlUser.getSecurityQuestions();   //Loads the questions from db
 
-        ArrayAdapter<Question> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, arraySecurityQuestion);
+        ArrayAdapter<Question> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, arraySecurityQuestion);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerSecurityQuestion.setAdapter(adapter);
@@ -117,7 +122,7 @@ public class SignUpActivity extends BaseActivity {
     public void loadConnectionPage(){
         ConnectionActivity ca = new ConnectionActivity();
 
-        Intent intent = new Intent(SignUpActivity.this,ca.getClass());
+        Intent intent = new Intent(SignUpActivity.this, ca.getClass());
         SignUpActivity.this.startActivity(intent);
     }
 }

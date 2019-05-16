@@ -27,10 +27,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class BaseActivity extends AppCompatActivity
-{
+public class BaseActivity extends AppCompatActivity {
 
     private static String userName;
+
 
     protected void onCreateDrawer(boolean canOpen){
 
@@ -53,8 +53,6 @@ public class BaseActivity extends AppCompatActivity
                     // open right drawer
                     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                     drawer.openDrawer(GravityCompat.END);
-
-
                     View view = getCurrentFocus();
                 }
 
@@ -69,8 +67,7 @@ public class BaseActivity extends AppCompatActivity
                 @RequiresApi(api = Build.VERSION_CODES.N)
                 public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-
-                    switch(menuItem.toString()){
+                    switch (menuItem.toString()) {
                         case "Catalogue":
                             Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
                             startActivity(myIntent);
@@ -83,7 +80,8 @@ public class BaseActivity extends AppCompatActivity
                             startActivity(topass);
                             break;
                         case "Recette personalisée":
-                            //Open page here
+                            Intent intentForm = new Intent(getApplicationContext(), FormActivity.class);
+                            startActivity(intentForm);
                             break;
                         case "Notifications":
                             //Open page here

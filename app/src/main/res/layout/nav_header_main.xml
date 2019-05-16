@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fichier : nav_header_main.xml
+    Auteure : David Gaulin
+    Fonctionnalité : Side bar
+    Date : 2019-05-08
+    Vérification :
+    Date Nom Approuvé
+    =========================================================
+    Historique de modifications :
+    Date Nom Description
+    =========================================================
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_header"

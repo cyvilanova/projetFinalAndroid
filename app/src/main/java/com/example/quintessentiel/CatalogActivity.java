@@ -81,7 +81,7 @@ public class CatalogActivity extends BaseActivity {
             this.products = products;
         }
 
-        
+
         /**
          * Method that generates rows of products based on an arraylist of product
          * @param position The position of the cursor, works as an iterator

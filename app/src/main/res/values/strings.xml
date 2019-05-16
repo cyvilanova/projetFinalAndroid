@@ -19,11 +19,6 @@
     <string name="btnCreateAccount">Créer un compte</string>
     <string name="btnConnectAccount">Se connecter</string>
 
-    <!-- Commandes -->
-    <string name="cart_cancel_button">Supprimer</string>
-    <string name="cancel_order_btn">Annuler la commande</string>
-    <string name="command_btn">Commander</string>
-
     <!-- Catalog Page -->
     <string name="txtProductTitle">Product Title PlaceHolder</string>
     <string name="lblProductPrice">Prix: </string>
@@ -54,20 +49,26 @@
     <string name="error_quantity">La quantité doit être plus grande que zéro.</string>
     <string name="error_age">Doit se situer entre 0 et 100 ans.</string>
     <string name="error_empty_field">Ce champ ne peut pas être vide.</string>
+    <string name="lblConfirmationProduct">Confirmation</string>
+    <string name="lblDescConfirmationProduct">Confirmer les informations entrées ci-dessous pour envoyer la demande à Quintessentiel.</string>
 
     <!-- Menu -->
     <string name="welcomeName">Bonjour %1$s !</string>
     <string name="notConnectedWelcome">Vous n\'êtes pas connecté</string>
+
+
+    <!-- Commandes -->
+    <string name="cart_cancel_button">Supprimer</string>
+    <string name="cancel_order_btn">Annuler la commande</string>
+    <string name="command_btn">Commander</string>
     <string name="itemCatalog">Catalogue</string>
     <string name="itemCart">Mon panier</string>
     <string name="itemPersonalisedRecipe">Recette personalisée</string>
-    <string name="itemNotification">Notifications</string>
+    <string name="itemDarkTheme">Mode nuit</string>
     <string name="itemLogOut">Déconnexion</string>
     <string name="my_orders">Mes commandes</string>
-
     <string name="order">Commander</string>
     <string name="order_details">Détails de la commande</string>
-
     <string name="confirm_form_sent">Demande de produit personnalisée envoyée! Vous devriez avoir des nouvelles d\'ici quelques jours.</string>
 
 </resources>

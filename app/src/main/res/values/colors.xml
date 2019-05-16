@@ -4,7 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-
     <color name="hintColor">#919191</color>
     <color name="colorBackground">#EDEDED</color>
     <color name="colorButton">#FFF6C9</color>
@@ -13,12 +12,13 @@
     <color name="cursorColor">#342c2c</color>
     <color name="colorBorder">#919191</color>
     <color name="toolBarBackground">#FFF6C9</color>
-
-
-
-    <color name="buttonBrown">#342c2c</color>
-
     <color name="darkSideBarBackground">#E8E0B7</color>
     <color name="lightSideBar">#FEFCE8</color>
+
+    <color name="darkBrown">#292323</color>
+    <color name="buttonBrown">#342C2C</color>
+    <color name="lightBeige">#FFF6F9</color>
+    <color name="greenAccent">#BCD13F</color>
+    <color name="darkGreen">#7C8C34</color>
 
 </resources>

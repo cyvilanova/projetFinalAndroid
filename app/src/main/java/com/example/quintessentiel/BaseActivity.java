@@ -1,3 +1,21 @@
+package com.example.quintessentiel;
+
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
 /****************************************
  Fichier : BaseActivity.java
  Auteure : David Gaulin
@@ -10,23 +28,6 @@
  Date Nom Description
  =========================================================
  ****************************************/
-package com.example.quintessentiel;
-
-import android.content.Intent;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-
 public class BaseActivity extends AppCompatActivity {
 
     private static String userName;
@@ -83,8 +84,11 @@ public class BaseActivity extends AppCompatActivity {
                             Intent intentForm = new Intent(getApplicationContext(), FormActivity.class);
                             startActivity(intentForm);
                             break;
-                        case "Notifications":
-                            //Open page here
+                        case "Mode nuit":
+                            changeTheme();
+                            Intent reloadIntent = getIntent();
+                            finish();
+                            startActivity(reloadIntent);
                             break;
                         case "Déconnexion":
                             //Open page here
@@ -107,7 +111,28 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * Sets the username to display on the side bar
+     * Applies new theme
+     */
+    private void changeTheme() {
+        int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        System.out.println(currentNightMode);
+        switch (currentNightMode) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+
+            case Configuration.UI_MODE_NIGHT_NO:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+        }
+    }
+
+    /**
+     * Displays the welcome message
      */
     public void setDisplayUserName(){
         TextView lblName = (TextView) findViewById(R.id.nav_header_textView);

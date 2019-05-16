@@ -1,15 +1,13 @@
 package com.example.quintessentiel;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.quintessentiel.User.CtrlUser;
 import com.example.quintessentiel.User.Question;
@@ -22,6 +20,7 @@ public class SignUpActivity extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
         super.onCreateDrawer(true);
@@ -50,26 +49,22 @@ public class SignUpActivity extends BaseActivity {
                 String securityAnswerVal = securityAnswer.getText().toString();
 
 
-                if(usernameVal.equals("") || emailVal.equals("") || passwordVal.equals("") || confirmPasswordVal.equals("") || securityAnswerVal.equals("") || securityQuestionVal.equals("")){
+                if (usernameVal.equals("") || emailVal.equals("") || passwordVal.equals("") || confirmPasswordVal.equals("") || securityAnswerVal.equals("") || securityQuestionVal.equals("")) {
 
                     //Empty field(s)
                     System.out.println("empty field(s)");
-                }
-                else{
+                } else {
 
-                    if(passwordVal.equals(confirmPasswordVal)){
+                    if (passwordVal.equals(confirmPasswordVal)) {
 
-                        if(ctrlUser.createUser(usernameVal,emailVal,passwordVal,securityAnswerVal,securityQuestionVal))
-                        {
+                        if (ctrlUser.createUser(usernameVal, emailVal, passwordVal, securityAnswerVal, securityQuestionVal)) {
                             loadConnectionPage();
-                        }
-                        else{
+                        } else {
                             System.out.println("didnt work");
                         }
 
 
-                    }
-                    else{   //Passwords not matching
+                    } else {   //Passwords not matching
                         System.out.println("Not matching!");
                     }
                 }
@@ -91,20 +86,20 @@ public class SignUpActivity extends BaseActivity {
         });
     }
 
-    public void populateSecurityQuestions(){
+    public void populateSecurityQuestions() {
         Spinner spinnerSecurityQuestion = findViewById(R.id.spinnerSignUpQuestion);
         ArrayList<Question> arraySecurityQuestion = this.ctrlUser.getSecurityQuestions();
 
-        ArrayAdapter<Question> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, arraySecurityQuestion);
+        ArrayAdapter<Question> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, arraySecurityQuestion);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerSecurityQuestion.setAdapter(adapter);
     }
 
-    public void loadConnectionPage(){
+    public void loadConnectionPage() {
         ConnectionActivity ca = new ConnectionActivity();
 
-        Intent intent = new Intent(SignUpActivity.this,ca.getClass());
+        Intent intent = new Intent(SignUpActivity.this, ca.getClass());
         SignUpActivity.this.startActivity(intent);
     }
 }

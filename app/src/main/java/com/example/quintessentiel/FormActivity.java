@@ -16,7 +16,7 @@ import com.example.quintessentiel.Form.MgrForm;
 import java.util.HashMap;
 
 
-public class FormActivity extends AppCompatActivity {
+public class FormActivity extends BaseActivity {
 
     EditText inputAge;
     EditText inputQuantity;
@@ -32,6 +32,7 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_custom_recipe);
+        super.onCreateDrawer(true);
 
         inputAge = (EditText) findViewById(R.id.txtAge);
         inputQuantity = (EditText) findViewById(R.id.txtQuantity);
@@ -71,7 +72,7 @@ public class FormActivity extends AppCompatActivity {
      *
      */
     public void confirmFormView() {
-        final String errorMessage = "Ce champ ne peut pas être vide.";
+        final String errorMessage = getString(R.string.error_empty_field);
         HashMap<String, String> formData = new HashMap<String, String>();
 
         final String age = inputAge.getText().toString();
@@ -86,16 +87,15 @@ public class FormActivity extends AppCompatActivity {
         if (age.length() == 0) {
             inputAge.requestFocus();
             inputAge.setError(errorMessage);
-            Log.d("Age", inputAge.getText().toString());
         } else if (Integer.parseInt(age) > 100) {
             inputQuantity.requestFocus();
-            inputQuantity.setError("Doit se situer entre 0 et 100 ans.");
+            inputQuantity.setError(getString(R.string.error_age));
         } else if (quantity.length() == 0) {
             inputQuantity.requestFocus();
             inputQuantity.setError(errorMessage);
         } else if (Integer.parseInt(quantity) == 0) {
             inputQuantity.requestFocus();
-            inputQuantity.setError("La quantité doit être plus grande que zéro.");
+            inputQuantity.setError(getString(R.string.error_quantity));
         } else {
             formData.put("age", age);
             formData.put("skintype", skintype);
@@ -146,7 +146,7 @@ public class FormActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MgrForm mgrForm = new MgrForm();
-                mgrForm.insertForm();
+                mgrForm.insertForm(formData);
             }
         });
     }

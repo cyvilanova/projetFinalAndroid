@@ -1,6 +1,7 @@
 package com.example.quintessentiel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -72,7 +73,8 @@ public class BaseActivity extends AppCompatActivity
                             //Open page here
                             break;
                         case "Recette personalisée":
-                            //Open page here
+                            Intent intentForm = new Intent(BaseActivity.this, FormActivity.class);
+                            startActivity(intentForm);
                             break;
                         case "Notifications":
                             //Open page here

@@ -44,5 +44,8 @@
     <string name="itemPersonalisedRecipe">Recette personalisée</string>
     <string name="itemNotification">Notifications</string>
     <string name="itemLogOut">Déconnexion</string>
+    <string name="error_quantity">La quantité doit être plus grande que zéro.</string>
+    <string name="error_age">Doit se situer entre 0 et 100 ans.</string>
+    <string name="error_empty_field">Ce champ ne peut pas être vide.</string>
 
 </resources>

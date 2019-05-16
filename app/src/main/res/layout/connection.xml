@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
-    <!--  tools:openDrawer="end" -->
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -85,7 +84,6 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
-                    android:theme="@style/EditTextColorCustom"
                     android:textColorHint="@color/hintColor"
                     />
 
@@ -115,7 +113,6 @@
                     android:paddingRight="3dp"
                     android:paddingBottom="5dp"
                     android:textSize="23sp"
-                    android:theme="@style/EditTextColorCustom"
                     android:textColorHint="@color/hintColor"/>
 
 

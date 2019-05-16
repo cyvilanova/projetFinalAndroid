@@ -18,6 +18,9 @@
         <item android:id="@+id/nav_item_four"
             android:title="@string/itemNotification"
             android:icon="@drawable/icon_notification"/>
+        <item android:id="@+id/nav_item_five"
+            android:title="@string/my_orders"
+            android:icon="@drawable/icon_cart"/>
     </group>
     <group>
         <item

@@ -33,8 +33,6 @@ public class BaseActivity extends AppCompatActivity
 
         if(canOpen){
 
-
-
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
             setSupportActionBar(toolbar);
@@ -67,7 +65,6 @@ public class BaseActivity extends AppCompatActivity
                 @RequiresApi(api = Build.VERSION_CODES.N)
                 public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-
                     switch(menuItem.toString()){
                         case "Catalogue":
                                 //Open page here
@@ -75,7 +72,7 @@ public class BaseActivity extends AppCompatActivity
                         case "Mon panier":
                             Intent intent = getIntent();
                             Intent topass = new Intent(getApplicationContext(), Cart.class);
-                            
+
                             topass.putExtra("order", intent.getSerializableExtra("order"));
                             startActivity(topass);
                             break;

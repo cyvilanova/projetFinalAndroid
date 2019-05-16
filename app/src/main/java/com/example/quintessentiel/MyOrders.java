@@ -55,17 +55,19 @@ public class MyOrders extends BaseActivity {
         prefs = this.getSharedPreferences("UserPref", 0);
         id_client = prefs.getInt("userId", 0);
 
+        if (id_client == 0) {
 
+        }
+        else {
+            orders = ctrlOrder.getAllOrdersClient(id_client);
 
+            Log.d("FML", "onCreate: " + orders.get(0).getQuantities());
 
-        orders = ctrlOrder.getAllOrdersClient(id_client);
+            listView = findViewById(R.id.orders_listView);
 
-        Log.d("FML", "onCreate: " + orders.get(0).getQuantities());
-
-        listView = findViewById(R.id.orders_listView);
-
-        OrdersAdapter adapter = new OrdersAdapter(this, orders);
-        listView.setAdapter(adapter);
+            OrdersAdapter adapter = new OrdersAdapter(this, orders);
+            listView.setAdapter(adapter);
+        }
     }
 
     class OrdersAdapter extends ArrayAdapter<Order> {

@@ -50,28 +50,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-/**
-
-
-
-
-
-
-    public class MainActivity extends AppCompatActivity {
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            btnTest.setOnClickListener(new View.OnClickListener() {
-
-                @RequiresApi(api = Build.VERSION_CODES.N)
-                @Override
-                public void onClick(View v) {
-                    testBd();
-                }
-            });
-        }
-
-
-
-    }
-**/

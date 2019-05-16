@@ -1,5 +1,7 @@
 package com.example.quintessentiel.Product;
 
+import java.io.Serializable;
+
 /**
  * Fichier: Product.java
  * Auteur: Cynthia Vilanova
@@ -14,7 +16,7 @@ package com.example.quintessentiel.Product;
  * 8-5-2019           CV      Création
  * 10-5-2019          CV      Ajout ImagePath
  */
-public class Product {
+public class Product implements Serializable {
     private Integer id; // The id of the product
     private String name; // The name of the product
     private String description; // The description of the product

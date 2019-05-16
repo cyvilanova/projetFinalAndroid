@@ -31,6 +31,7 @@ public class SignUpActivity extends BaseActivity {
         btnSideMenu.setVisibility(View.INVISIBLE);
 
         this.ctrlUser = new CtrlUser(this);
+
         populateSecurityQuestions();
 
         findViewById(R.id.btnSignUp).setOnClickListener(new View.OnClickListener() {

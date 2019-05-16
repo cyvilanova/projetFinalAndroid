@@ -19,7 +19,7 @@ public final class Constants {
     public static final String REQUEST_METHOD = "POST";
     public static final String HTTP_URL_CONNECTION_UPDATE = "http://" + SERVER_IP + "/androidapp/requestUpdate.php";
     public static final String HTTP_URL_CONNECTION_SELECT = "http://" + SERVER_IP + "/androidapp/requestSelect.php";
-
+    public static final String HTTP_URL_CONNECTION_LASTID = "http://" + SERVER_IP + "/androidapp/requestLastInsert.php";
 
     public static final String IMAGE_PATH_PREFIX = "/res/drawable/";
 }

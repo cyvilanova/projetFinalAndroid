@@ -44,12 +44,86 @@ public class MgrOrder {
         this.httpRequest = new HttpPostRequest();
     }
 
+    public int getLastInsertedId() {
+        String query = "SELECT COUNT(id_order) FROM `order`";
+        Map<String, Object> parameters = new HashMap<>();
+
+        JSONObject jsonParameters = new JSONObject(parameters);
+        this.httpRequest.setHttpUrlConnection(Constants.HTTP_URL_CONNECTION_SELECT);
+        String result = this.httpRequest.executeQuery(query, jsonParameters);
+
+        ArrayList<ArrayList<String>> ordersList = new ArrayList<>();
+        JSONArray jsonProductsArray = null;
+        try {
+            Log.d("FML", "getAllOrderClient: " + result);
+            jsonProductsArray = new JSONArray(result);
+            if (jsonProductsArray != null) {
+                for (int i = 0; i < jsonProductsArray.length(); i++) {
+
+                    JSONArray jsonProduct = new JSONArray(jsonProductsArray.get(i).toString());
+                    ArrayList<String> orderProperties = new ArrayList<>();
+
+                    if (jsonProduct != null) {
+                        for (int j = 0; j < jsonProduct.length(); j++) {
+                            orderProperties.add(jsonProduct.get(j).toString());
+                        }
+                    }
+
+                    ordersList.add(orderProperties);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        String lastid = "";
+        for (int i = 0; i < ordersList.size(); i++) {
+            lastid = ordersList.get(i).get(0);
+        }
+
+        int id = Integer.parseInt(lastid);
+        Log.d("FML", "getLastInsertedId: " + id);
+        return id;
+    }
+
     /**
      * Insert a new order
      * @param order Order containing the products, client, shipping method, etc
      */
     public void insertOrder(Order order) {
-        String query = "";
+        String query = "INSERT INTO `order` (`id_client`, `id_user`, `id_state`, `id_method`, `tps`, `tvq`, `total`) VALUES (1, :user, 2, :method, :tps, :tvq, :total)";
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put(":user", order.getIdUser());
+        parameters.put(":method", 1);
+        parameters.put(":tps", order.getTps());
+        parameters.put(":tvq", order.getTvq());
+        parameters.put(":total", order.getTotal());
+
+        JSONObject jsonParameters = new JSONObject(parameters);
+
+        this.httpRequest.setHttpUrlConnection(Constants.HTTP_URL_CONNECTION_UPDATE);
+        this.httpRequest.executeQuery(query, jsonParameters);
+
+        int id = getLastInsertedId();
+        order.setId(id);
+        insertProducts(order, order.getProducts());
+    }
+
+    public void insertProducts(Order order, ArrayList<Product> products) {
+
+        for (int i = 0; i < products.size(); i++) {
+            String query = "INSERT INTO `ta_order_product` (`id_order`, `id_product`, `quantity`) VALUES (:id_order, :id_product, :quantity)";
+
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put(":id_order", order.getId());
+            parameters.put(":id_product", products.get(i).getId());
+            parameters.put(":quantity", order.getQuantities().get(i));
+
+
+            JSONObject jsonParameters = new JSONObject(parameters);
+
+            this.httpRequest.setHttpUrlConnection(Constants.HTTP_URL_CONNECTION_UPDATE);
+            this.httpRequest.executeQuery(query, jsonParameters);
+        }
     }
 
     /**

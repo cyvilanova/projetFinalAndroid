@@ -33,38 +33,37 @@
             android:padding="70dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="TextView" />
+                android:text="@string/order_details" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tvq"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="TextView" />
+                android:gravity="center"/>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="TextView" />
+                android:gravity="center"/>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="TextView" />
+                android:gravity="center"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/command"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:background="@color/buttonBrown"
+                android:text="@string/order"
+                android:textColor="@color/colorButton" />
         </LinearLayout>
 
     </LinearLayout>

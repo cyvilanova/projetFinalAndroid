@@ -19,17 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConnectionActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ConnectionActivity" android:parentActivityName=".MainActivity"/>
 
         <activity android:label="@string/app_name" android:name=".CatalogActivity"/>
-        <activity android:label="@string/app_name" android:name=".SingleProductActivity"/>
-        <activity android:name=".SignUpActivity"
-            android:parentActivityName=".ConnectionActivity">
+        <activity android:label="@string/app_name" android:name=".SingleProductActivity" android:parentActivityName=".CatalogActivity"/>
+        <activity android:name=".SignUpActivity" android:parentActivityName=".ConnectionActivity">
         </activity>
-        <activity android:name=".Cart" />
-        <activity android:name=".AddOrder" />
-        <activity android:name=".MyOrders" />
+        <activity android:name=".Cart" android:parentActivityName=".CatalogActivity"/>
+        <activity android:name=".AddOrder" android:parentActivityName=".CatalogActivity"/>
+        <activity android:name=".MyOrders" android:parentActivityName=".CatalogActivity"/>
     </application>
 
 </manifest>

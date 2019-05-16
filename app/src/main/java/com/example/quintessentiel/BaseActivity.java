@@ -1,7 +1,10 @@
 package com.example.quintessentiel;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,8 +16,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.example.quintessentiel.User.MgrUser;
-import com.example.quintessentiel.User.User;
+//import com.example.quintessentiel.Order.MgrOrder;
+//import com.example.quintessentiel.Order.Order;
+//import com.example.quintessentiel.User.MgrUser;
+//import com.example.quintessentiel.User.User;
 
 import java.sql.SQLOutput;
 
@@ -47,9 +52,9 @@ public class BaseActivity extends AppCompatActivity
 
                     View view = getCurrentFocus();
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                    view.clearFocus(); //The parent of this elements needs to be focusable
+                    //InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    //imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    //view.clearFocus(); //The parent of this elements needs to be focusable
 
                 }
 
@@ -61,15 +66,21 @@ public class BaseActivity extends AppCompatActivity
             navigationView.bringToFront();
             navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
                 @Override
+                @RequiresApi(api = Build.VERSION_CODES.N)
                 public boolean onNavigationItemSelected(MenuItem menuItem) {
 
 
                     switch(menuItem.toString()){
                         case "Catalogue":
-                                //Open page here
+                            Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
+                            startActivity(myIntent);
                             break;
                         case "Mon panier":
-                            //Open page here
+                            //Intent intent = getIntent();
+                            //Intent topass = new Intent(getApplicationContext(), Cart.class);
+
+                            //topass.putExtra("order", intent.getSerializableExtra("order"));
+                            //startActivity(topass);
                             break;
                         case "Recette personalisée":
                             //Open page here
@@ -79,6 +90,10 @@ public class BaseActivity extends AppCompatActivity
                             break;
                         case "Déconnexion":
                             //Open page here
+                            break;
+                        case "Mes commandes":
+                            //Intent myOrders = new Intent(getApplicationContext(), MyOrders.class);
+                            //startActivity(myOrders);
                             break;
 
                     }

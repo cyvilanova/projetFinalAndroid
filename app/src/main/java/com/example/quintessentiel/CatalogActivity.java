@@ -24,7 +24,7 @@ import com.example.quintessentiel.Product.Product;
 import java.util.ArrayList;
 
 
-public class CatalogActivity extends AppCompatActivity {
+public class CatalogActivity extends BaseActivity {
 
     ListView listView;
     ArrayList<Product> products;
@@ -35,6 +35,7 @@ public class CatalogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.catalog);
+        super.onCreateDrawer(true);
 
         mgrProduct.getAllProducts();
         products = mgrProduct.getProducts();
@@ -49,8 +50,8 @@ public class CatalogActivity extends AppCompatActivity {
                 Product product = adapter.getItem(position);
                 Intent myIntent = new Intent(CatalogActivity.this, SingleProductActivity.class);
 
-                    myIntent.putExtra("SELECTED_PRODUCT",product);
-                    CatalogActivity.this.startActivity(myIntent);
+                myIntent.putExtra("SELECTED_PRODUCT",product);
+                CatalogActivity.this.startActivity(myIntent);
             }
         });
 

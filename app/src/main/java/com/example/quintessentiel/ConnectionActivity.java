@@ -44,8 +44,9 @@ public class ConnectionActivity extends BaseActivity {
                     else{
 
                         if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
-                            System.out.println("CONNECTED");
                             ConnectionActivity.super.setUserName(usernameVal);
+                            Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
+                            startActivity(myIntent);
                         }
                         else{
                             System.out.println("ERROR, CAN'T CONNECT");

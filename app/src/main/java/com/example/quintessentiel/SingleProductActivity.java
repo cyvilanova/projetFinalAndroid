@@ -9,12 +9,14 @@ import com.example.quintessentiel.Product.Product;
 
 import org.w3c.dom.Text;
 
-public class SingleProductActivity extends AppCompatActivity {
+public class SingleProductActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.catalog_product);
+        super.onCreateDrawer(true);
+
         Product product = (Product) getIntent().getSerializableExtra("SELECTED_PRODUCT");
 
         TextView title = findViewById(R.id.productTitle);

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 
 import com.example.quintessentiel.User.CtrlUser;
@@ -25,6 +26,10 @@ public class SignUpActivity extends BaseActivity {
         setContentView(R.layout.sign_up);
         super.onCreateDrawer(true);
 
+
+
+        FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
+        btnSideMenu.setVisibility(View.INVISIBLE);
 
         ctrlUser = new CtrlUser(this);
         populateSecurityQuestions();

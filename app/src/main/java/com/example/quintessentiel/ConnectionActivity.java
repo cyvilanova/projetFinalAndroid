@@ -1,6 +1,11 @@
 package com.example.quintessentiel;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.media.ToneGenerator;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -49,6 +54,8 @@ public class ConnectionActivity extends BaseActivity {
                     else{
 
                         if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
+                            final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 500);
+                            tg.startTone(ToneGenerator.TONE_PROP_BEEP);
                             ConnectionActivity.super.setUserName(usernameVal);
                             Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
                             startActivity(myIntent);

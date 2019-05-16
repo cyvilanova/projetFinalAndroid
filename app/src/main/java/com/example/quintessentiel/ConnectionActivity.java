@@ -15,17 +15,14 @@ package com.example.quintessentiel;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.media.AudioManager;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
 import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.Toast;
-
+import android.widget.ImageView;
 import com.example.quintessentiel.User.CtrlUser;
 
 public class ConnectionActivity extends BaseActivity {
@@ -39,6 +36,7 @@ public class ConnectionActivity extends BaseActivity {
         super.onCreateDrawer(true);
 
         ImageView facebookLink = findViewById(R.id.facebook);
+
         //Hide the side bar menu
         FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
         btnSideMenu.setVisibility(View.INVISIBLE);
@@ -47,7 +45,8 @@ public class ConnectionActivity extends BaseActivity {
 
         if (this.ctrlUser.checkIfConnected()) {   //If user is already connected
             loadCatalogPage();
-        } else {   //If user is not connected
+        }
+        else{   //If user is not connected
 
             //On connection button click
             findViewById(R.id.btnConnection).setOnClickListener(new View.OnClickListener() {
@@ -61,6 +60,7 @@ public class ConnectionActivity extends BaseActivity {
 
                     String usernameVal = usernameField.getText().toString();
                     String passwordVal = passwordField.getText().toString();
+
 
 
                     if (usernameVal.equals("") || passwordVal.equals("")) {   //If fields are empty
@@ -91,6 +91,7 @@ public class ConnectionActivity extends BaseActivity {
                 }
             });
 
+
             facebookLink.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -104,7 +105,7 @@ public class ConnectionActivity extends BaseActivity {
     /**
      * Brings the user to the catalog page once he's connected
      */
-    public void loadCatalogPage() {
+    public void loadCatalogPage(){
         Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
         startActivity(myIntent);
     }
@@ -112,7 +113,7 @@ public class ConnectionActivity extends BaseActivity {
     /**
      * Brings the user to the connection page
      */
-    public void loadSignUpPage() {
+    public void loadSignUpPage(){
         SignUpActivity sa = new SignUpActivity();
 
         Intent intent = new Intent(ConnectionActivity.this, sa.getClass());

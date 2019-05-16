@@ -4,14 +4,21 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+
+    <color name="hintColor">#919191</color>
     <color name="colorBackground">#EDEDED</color>
-    <color name="colorButton">#2ECC71</color>
+    <color name="colorButton">#FFF6C9</color>
     <color name="textboxBackground">#FFFFFF</color>
-    <color name="colorTextButton">#FFFFFF</color>
+    <color name="colorText">#342c2c</color>
+    <color name="cursorColor">#342c2c</color>
     <color name="colorBorder">#919191</color>
     <color name="toolBarBackground">#FFF6C9</color>
 
 
+
     <color name="buttonBrown">#342c2c</color>
 
+    <color name="darkSideBarBackground">#E8E0B7</color>
+    <color name="lightSideBar">#FEFCE8</color>
+>>>>>>> master
 </resources>

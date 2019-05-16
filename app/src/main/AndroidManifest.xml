@@ -21,8 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".MyOrders" />
         <activity android:name=".Cart" />
+
+        <activity android:name=".ConnectionActivity">
+        </activity>
+        <activity android:name=".SignUpActivity">
+        </activity>
+
     </application>
 
 </manifest>

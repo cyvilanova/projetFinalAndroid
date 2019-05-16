@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="24"
         android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -30,6 +30,10 @@
         </activity>
         <activity android:name="com.example.quintessentiel.MyOrders" />
         <activity android:name="com.example.quintessentiel.Cart" />
+        <activity android:name="com.example.quintessentiel.ConnectionActivity" >
+        </activity>
+        <activity android:name="com.example.quintessentiel.SignUpActivity" >
+        </activity>
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

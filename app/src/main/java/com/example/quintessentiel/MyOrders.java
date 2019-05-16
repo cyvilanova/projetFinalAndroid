@@ -3,6 +3,7 @@ package com.example.quintessentiel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -37,7 +38,7 @@ import com.example.quintessentiel.Product.*;
 
 import java.util.ArrayList;
 
-public class MyOrders extends AppCompatActivity {
+public class MyOrders extends BaseActivity {
 
     ListView listView;
     int id_client = 0;
@@ -49,9 +50,14 @@ public class MyOrders extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_orders);
+        super.onCreateDrawer(true);
+        SharedPreferences prefs;
+        prefs = this.getSharedPreferences("UserPref", 0);
+        id_client = prefs.getInt("userId", 0);
 
-        Intent intent = getIntent();
-        id_client = intent.getIntExtra("id_client", 0);
+
+
+
         orders = ctrlOrder.getAllOrdersClient(id_client);
 
         Log.d("FML", "onCreate: " + orders.get(0).getQuantities());

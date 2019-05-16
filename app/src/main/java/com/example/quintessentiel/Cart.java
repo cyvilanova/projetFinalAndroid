@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ import com.example.quintessentiel.Product.Product;
 import java.util.ArrayList;
 
 
-public class Cart extends AppCompatActivity {
+public class Cart extends BaseActivity {
 
     Order order;
 
@@ -43,16 +44,24 @@ public class Cart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
-
+        super.onCreateDrawer(true);
 
         order = (Order) getIntent().getSerializableExtra("order");
 
-        ListView listView = findViewById(R.id.cart_products);
+        if (order == null) {
+            Log.d("FML", "onCreate: ORDER == NULL");
+            finish();
+        }
+        else {
 
 
-        ProductAdapter adapter = new ProductAdapter(this, order.getProducts(), order.getQuantities());
-        listView.setAdapter(adapter);
-        justifyListViewHeightBasedOnChildren(listView);
+            ListView listView = findViewById(R.id.cart_products);
+
+
+            ProductAdapter adapter = new ProductAdapter(this, order.getProducts(), order.getQuantities());
+            listView.setAdapter(adapter);
+            justifyListViewHeightBasedOnChildren(listView);
+        }
     }
 
     class ProductAdapter extends ArrayAdapter<Product> {

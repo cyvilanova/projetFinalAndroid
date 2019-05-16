@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer"
+        android:background="@color/lightSideBar"
+        app:itemTextColor="@color/colorText"
+        app:itemIconTint="@color/colorText" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +47,7 @@
                     android:background="@color/buttonBrown"
                     android:padding="2dp"
                     android:text="@string/cancel_order_btn"
-                    android:textColor="@color/colorTextButton" />
+                    android:textColor="@color/colorBackground" />
 
                 <Button
                     android:id="@+id/command-cart"
@@ -40,9 +56,9 @@
                     android:layout_weight="1"
                     android:background="@color/buttonBrown"
                     android:text="@string/command_btn"
-                    android:textColor="@color/colorTextButton" />
+                    android:textColor="@color/colorBackground" />
             </LinearLayout>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.DrawerLayout>

@@ -4,26 +4,34 @@ package com.example.quintessentiel;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+
+import android.content.SharedPreferences;
+
+
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.quintessentiel.Order.CtrlOrder;
-import com.example.quintessentiel.Order.MgrOrder;
-import com.example.quintessentiel.Order.Order;
 import com.example.quintessentiel.Product.MgrProduct;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnTest;
-    MgrProduct mgrProduct = new MgrProduct();
+
+
+    private SharedPreferences prefs;
+    private Button btnTest;
+    private MgrProduct mgrProduct = new MgrProduct();
+
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
 
@@ -42,17 +50,19 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void testBd() {
-        Intent intent = new Intent(this, Cart.class);
-        intent.putExtra("id_client", 1);
 
-        mgrProduct.getProductById(1);
-        mgrProduct.getProductById(2);
-        MgrOrder mgrOrder = new MgrOrder();
+        setContentView(R.layout.connection);
 
-        Order o = mgrOrder.getInfoOrder(1);
+        //Clears the preferences
+        prefs = this.getSharedPreferences("UserPref", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.clear().commit();
 
+        //Launches the connection activity
+        ConnectionActivity sa = new ConnectionActivity();
+        Intent intent = new Intent(MainActivity.this,sa.getClass());
+        MainActivity.this.startActivity(intent);
 
-        intent.putExtra("order", o);
-        startActivity(intent);
     }
+
 }

@@ -49,7 +49,7 @@ public class Cart extends BaseActivity {
         super.onCreateDrawer(true);
 
         order = (Order) getIntent().getSerializableExtra("order");
-        MgrOrder mgrOrder = new MgrOrder();
+        MgrOrder mgrOrder = new MgrOrder(getApplicationContext());
         order = mgrOrder.getInfoOrder(1);
         if (order == null) {
             Log.d("FML", "onCreate: ORDER == NULL");

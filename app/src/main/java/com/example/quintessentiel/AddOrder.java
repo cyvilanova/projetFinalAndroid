@@ -37,7 +37,7 @@ public class AddOrder extends BaseActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CtrlOrder ctrlOrder = new CtrlOrder();
+                CtrlOrder ctrlOrder = new CtrlOrder(getApplicationContext());
                 ctrlOrder.addOrder(order);
                 finish();
             }

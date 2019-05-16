@@ -17,6 +17,7 @@
 
 package com.example.quintessentiel.Order;
 
+import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
@@ -29,9 +30,9 @@ public class CtrlOrder {
     private MgrProduct mgrProduct;
 
 
-    public CtrlOrder() {
-        mgrOrder = new MgrOrder();
-        mgrProduct = new MgrProduct();
+    public CtrlOrder(Context context) {
+        mgrOrder = new MgrOrder(context);
+        mgrProduct = new MgrProduct(context);
     }
 
     /**

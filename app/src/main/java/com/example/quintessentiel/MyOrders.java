@@ -44,7 +44,7 @@ public class MyOrders extends BaseActivity {
     ListView listView;
     int id_client = 0;
     ArrayList<Order> orders = new ArrayList<>();
-    CtrlOrder ctrlOrder = new CtrlOrder();
+    CtrlOrder ctrlOrder = new CtrlOrder(getApplicationContext());
 
     @Override
     @RequiresApi(api = Build.VERSION_CODES.N)

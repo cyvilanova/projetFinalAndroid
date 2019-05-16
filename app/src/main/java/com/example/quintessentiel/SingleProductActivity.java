@@ -88,7 +88,7 @@ public class SingleProductActivity extends BaseActivity {
         qty.add(1);
 
         Order newOrder = new Order(state,productToAdd,id_client,method,tps,tvq,date,qty);
-        MgrOrder orderManager = new MgrOrder();
+        MgrOrder orderManager = new MgrOrder(getApplicationContext());
 
         //Remove comments once addOrder Function is done!
         //orderManager.addOrder(newOrder);

@@ -18,6 +18,7 @@
  ****************************************/
 package com.example.quintessentiel.Order;
 
+import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
@@ -39,8 +40,8 @@ public class MgrOrder {
     private MgrProduct mgrProduct;
     private HttpPostRequest httpRequest;
 
-    public MgrOrder() {
-        this.mgrProduct = new MgrProduct();
+    public MgrOrder(Context context) {
+        this.mgrProduct = new MgrProduct(context);
         this.httpRequest = new HttpPostRequest();
     }
 

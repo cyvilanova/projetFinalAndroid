@@ -1,5 +1,7 @@
 package com.example.quintessentiel.Product;
 
+import android.content.Context;
+
 /**
  * Fichier: CtrlProduct.java
  * Auteur: Cynthia Vilanova
@@ -20,7 +22,7 @@ public class CtrlProduct {
     /**
      * Constructor
      */
-    public CtrlProduct() {
-        this.mgrProduct = new MgrProduct();
+    public CtrlProduct(Context context) {
+        this.mgrProduct = new MgrProduct(context);
     }
 }

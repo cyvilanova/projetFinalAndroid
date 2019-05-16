@@ -2,6 +2,8 @@ package com.example.quintessentiel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -25,7 +27,7 @@ public class CatalogActivity extends BaseActivity {
     ListView listView;
     ArrayList<Product> products;
 
-    MgrProduct mgrProduct = new MgrProduct();
+    MgrProduct mgrProduct = new MgrProduct(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +35,16 @@ public class CatalogActivity extends BaseActivity {
         setContentView(R.layout.catalog);
         super.onCreateDrawer(true);
 
-        mgrProduct.getAllProducts();
-        products = mgrProduct.getProducts();
+        if(isNetworkAvailable()) {
+            mgrProduct.getAllProducts();
+            products = mgrProduct.getProducts();
+        }
+        else {
+            mgrProduct.getAllLocalProducts();
+            products = mgrProduct.getProducts();
+        }
         listView = findViewById(R.id.productList);
+
         ImageView sortImg = findViewById(R.id.sortIcon);
 
         ProductAdapter adapter = new ProductAdapter(this, products);
@@ -68,9 +77,7 @@ public class CatalogActivity extends BaseActivity {
 
         @NonNull
         @Override
-
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
             LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View productRow = layoutInflater.inflate(R.layout.catalog_row, parent, false);
 
@@ -100,7 +107,15 @@ public class CatalogActivity extends BaseActivity {
 
             return productRow;
         }
+    }
 
-
+    /**
+     * Checks if the android device is connected to the internet
+     * @return if connected to a network
+     */
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

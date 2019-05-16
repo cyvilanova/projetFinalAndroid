@@ -103,7 +103,7 @@ public class SingleProductActivity extends BaseActivity {
         String date = df.format(c);
 
         ArrayList<Integer> qty = new ArrayList<>();
-        qty.add(1);
+        qty.add(1); //adds the quantity
 
         Order newOrder = new Order(state,productToAdd,id_client,method,tps,tvq,date,qty);
         MgrOrder orderManager = new MgrOrder();

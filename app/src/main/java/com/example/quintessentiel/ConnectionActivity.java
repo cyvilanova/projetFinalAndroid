@@ -1,5 +1,18 @@
+/****************************************
+ Fichier : ConnectionActivity.java
+ Auteure : David Gaulin
+ Fonctionnalité : M1 - Login
+ Date : 2019-05-08
+ Vérification :
+ Date Nom Approuvé
+ =========================================================
+ Historique de modifications :
+ Date Nom Description
+ =========================================================
+ ****************************************/
 package com.example.quintessentiel;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.Ringtone;
@@ -10,9 +23,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-
-import android.widget.TextView;
-
+import android.widget.ImageView;
+import android.widget.Toast;
 import com.example.quintessentiel.User.CtrlUser;
 
 public class ConnectionActivity extends BaseActivity {
@@ -25,6 +37,8 @@ public class ConnectionActivity extends BaseActivity {
         setContentView(R.layout.connection);
         super.onCreateDrawer(true);
 
+        ImageView facebookLink = findViewById(R.id.facebook);
+        //Hide the side bar menu
         FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
         btnSideMenu.setVisibility(View.INVISIBLE);
 
@@ -34,13 +48,14 @@ public class ConnectionActivity extends BaseActivity {
             loadCatalogPage();
         }
         else{   //If user is not connected
-            // yet
-            //On connection button click
 
+            //On connection button click
             findViewById(R.id.btnConnection).setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
+
+                    //Loads every fields & their values
                     EditText usernameField = findViewById(R.id.txtUsername);
                     EditText passwordField = findViewById(R.id.txtPassword);
 
@@ -49,27 +64,28 @@ public class ConnectionActivity extends BaseActivity {
 
 
                     if(usernameVal.equals("") || passwordVal.equals("")){   //If fields are empty
-                        System.out.println("please enter something");
+                        Toast.makeText(getBaseContext(), "Veuillez remplir les champs correctement", Toast.LENGTH_LONG).show();
                     }
-                    else{
+                    else{   //Fields are all filled
 
                         if(ctrlUser.checkCredentials(usernameVal,passwordVal)){
                             final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 500);
                             tg.startTone(ToneGenerator.TONE_PROP_BEEP);
+                        if(ctrlUser.checkCredentials(usernameVal,passwordVal)){ //Connection successfull
                             ConnectionActivity.super.setUserName(usernameVal);
-                            Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
-                            startActivity(myIntent);
+                            loadCatalogPage();
                         }
-                        else{
-                            System.out.println("ERROR, CAN'T CONNECT");
+                        else{   //Wrong infos given
+                            Toast.makeText(getBaseContext(), "Mauvais renseignements", Toast.LENGTH_LONG).show();
                         }
 
-                        System.out.println("Done");
+
                     }
 
                 }
             });
 
+            //On the to sign up button click
             findViewById(R.id.btnToSignUp).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -78,7 +94,6 @@ public class ConnectionActivity extends BaseActivity {
             });
         }
 
-
         findViewById(R.id.toolBarLeftBlockImage).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,25 +101,44 @@ public class ConnectionActivity extends BaseActivity {
             }
         });
 
-
+        facebookLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToFacebook("316220211894882");
+            }
+        });
     }
 
     /**
      * Brings the user to the catalog page once he's connected
      */
     public void loadCatalogPage(){
-        System.out.println("load catalog");
+        Intent myIntent = new Intent(getApplicationContext(), CatalogActivity.class);
+        startActivity(myIntent);
     }
 
     /**
      * Brings the user to the connection page
      */
     public void loadSignUpPage(){
-        System.out.println("LOADING....");
         SignUpActivity sa = new SignUpActivity();
 
         Intent intent = new Intent(ConnectionActivity.this,sa.getClass());
         ConnectionActivity.this.startActivity(intent);
+    }
+
+    /**
+     *  Brings the user to the Quintessential Facebook page
+     * @param pageId id of the facebook page to load
+     */
+    public void goToFacebook(String pageId){
+        try{
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/"+pageId));
+            startActivity(intent);
+        }catch (ActivityNotFoundException e){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/"+pageId));
+            startActivity(intent);
+        }
     }
 
 

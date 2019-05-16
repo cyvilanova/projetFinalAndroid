@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fichier : connection.xml
+    Auteure : David Gaulin
+    Fonctionnalité : M1 - Authentification
+    Date : 2019-05-08
+    Vérification :
+    Date Nom Approuvé
+    =========================================================
+    Historique de modifications :
+    Date Nom Description
+    =========================================================
+-->
 <android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -136,6 +148,13 @@
                     android:background="@color/colorButton"
                     android:text="@string/btnCreateAccount"
                     android:textColor="@color/colorText" />
+
+                <ImageView
+                    android:id="@+id/facebook"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/facebook"
+                    android:layout_gravity="end"/>
 
 
             </LinearLayout>

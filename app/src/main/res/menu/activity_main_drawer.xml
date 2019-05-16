@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fichier : activitu_main_drawer.xml
+    Auteure : David Gaulin
+    Fonctionnalité : Side bar
+    Date : 2019-05-08
+    Vérification :
+    Date Nom Approuvé
+    =========================================================
+    Historique de modifications :
+    Date Nom Description
+    =========================================================
+-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

@@ -1,11 +1,9 @@
 package com.example.quintessentiel;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,30 +13,40 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-//import com.example.quintessentiel.Order.MgrOrder;
-//import com.example.quintessentiel.Order.Order;
-//import com.example.quintessentiel.User.MgrUser;
-//import com.example.quintessentiel.User.User;
-
-import java.sql.SQLOutput;
-
-
+/****************************************
+ Fichier : BaseActivity.java
+ Auteure : David Gaulin
+ Fonctionnalité : Side bar & toolbar
+ Date : 2019-05-08
+ Vérification :
+ Date Nom Approuvé
+ =========================================================
+ Historique de modifications :
+ Date Nom Description
+ =========================================================
+ ****************************************/
 public class BaseActivity extends AppCompatActivity {
 
     private static String userName;
 
-    protected void onCreateDrawer(boolean canOpen) {
 
-        if (canOpen) {
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    protected void onCreateDrawer(boolean canOpen){
 
-            setSupportActionBar(toolbar);
+        //Sets the back arrow on the toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tb);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if(canOpen){    //If the activity can open the menu
+
             FrameLayout db = (FrameLayout) findViewById(R.id.drawer_button);
 
+            //Clicks on the menu buttons
             db.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -52,6 +60,8 @@ public class BaseActivity extends AppCompatActivity {
 
             });
 
+
+            //Listener on the menu items in order to change page
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.bringToFront();
             navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -94,12 +104,9 @@ public class BaseActivity extends AppCompatActivity {
                 }
             });
 
-        } else {
-            //Toast here to explain why you can't open it
-            //a str could be passed to onCreateDrawer if necessary in order to
-            //create custom messages
-            //ex: can't to this while not connected
-            //ex2: can't do .....
+        }
+        else{
+            Toast.makeText(getBaseContext(), "Impossible d'ouvrir le menu ici.", Toast.LENGTH_LONG).show();
         }
 
     }
@@ -128,21 +135,26 @@ public class BaseActivity extends AppCompatActivity {
     /**
      * Displays the welcome message
      */
-    public void setDisplayUserName() {
+    public void setDisplayUserName(){
         TextView lblName = (TextView) findViewById(R.id.nav_header_textView);
 
         String content;
 
-        if (userName != null) {
-            content = getString(R.string.welcomeName, this.userName);
-        } else {
+        if(userName != null){   //If the user is connected
+            content = getString(R.string.welcomeName,this.userName);
+        }
+        else{   //If the user isn't connected
             content = getString(R.string.notConnectedWelcome);
         }
 
         lblName.setText(content);
     }
 
-    public void setUserName(String username) {
+    /**
+     * Sets the username property
+     * @param username
+     */
+    public void setUserName(String username){
         this.userName = username;
     }
 }

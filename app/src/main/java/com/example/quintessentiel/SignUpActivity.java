@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -27,6 +28,9 @@ public class SignUpActivity extends BaseActivity {
         super.onCreateDrawer(true);
 
 
+        FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
+        btnSideMenu.setVisibility(View.INVISIBLE);
+        
         ctrlUser = new CtrlUser(this);
         populateSecurityQuestions();
 

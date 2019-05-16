@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.quintessentiel.User.CtrlUser;
@@ -17,6 +18,9 @@ public class ConnectionActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connection);
         super.onCreateDrawer(true);
+
+        FrameLayout btnSideMenu = findViewById(R.id.drawer_button);
+        btnSideMenu.setVisibility(View.INVISIBLE);
 
         this.ctrlUser = new CtrlUser(this);
 

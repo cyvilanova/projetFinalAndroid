@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * Fichier: Product.java
- * Auteur: Cynthia Vilanova
+ * Auteur: Cynthia Vilanova & Philippe Audit-Allaire
  * Fonctionnalité: Object containing the information of a product
  * Date : 8-5-2019
  *

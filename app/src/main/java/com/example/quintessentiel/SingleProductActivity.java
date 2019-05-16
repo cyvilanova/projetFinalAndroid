@@ -1,20 +1,32 @@
 package com.example.quintessentiel;
 
+
+/**
+ * Fichier: SingleProductActivity.java
+ * Auteur: Philippe Audit-Allaire
+ * Fonctionnalité: Activity that generates and handles a single product from the catalog
+ * Date : 16-5-2019
+ *
+ * Vérification :
+ * Date               Nom                   Approuvé
+ *
+ * Historique de modifications :
+ * Date               Nom     Description
+ * 11-5-2019          PAA      Création
+ * 12-5-2019          PAA      Ajout des styles
+ * 13-5-2019          PAA      Ajout image
+ * 15-5-2019          PAA      Ajout de l'ajout au panier
+ */
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Button;
-
-
 import com.example.quintessentiel.Order.MgrOrder;
 import com.example.quintessentiel.Order.Order;
 import com.example.quintessentiel.Product.Product;
-
-import org.w3c.dom.Text;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -55,10 +67,13 @@ public class SingleProductActivity extends BaseActivity {
             }
         });
 
-
-
     }
 
+    /**
+     * Returns the index of the drawable file equal to the timage ath of the product
+     * @param product Product to search the drawable file of
+     * @return the index of the drawable file
+     */
     public int getDrawable(Product product){
         String[] imagepath = product.getImagePath().split("\\.");
         int path = getResources().getIdentifier(imagepath[0], "drawable", getPackageName());
@@ -66,6 +81,9 @@ public class SingleProductActivity extends BaseActivity {
         return path;
     }
 
+    /**
+     * Adds the current product to current user's cart.
+     */
     public void addToCart(){
         ArrayList<Product> productToAdd= new ArrayList<>();
         Product product = (Product) getIntent().getSerializableExtra("SELECTED_PRODUCT");
@@ -90,8 +108,7 @@ public class SingleProductActivity extends BaseActivity {
         Order newOrder = new Order(state,productToAdd,id_client,method,tps,tvq,date,qty);
         MgrOrder orderManager = new MgrOrder();
 
-        //Remove comments once addOrder Function is done!
-        //orderManager.addOrder(newOrder);
+        orderManager.addOrder(newOrder);
 
     }
 

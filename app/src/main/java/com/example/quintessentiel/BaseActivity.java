@@ -71,11 +71,11 @@ public class BaseActivity extends AppCompatActivity
                             startActivity(myIntent);
                             break;
                         case "Mon panier":
-                            //Intent intent = getIntent();
-                            //Intent topass = new Intent(getApplicationContext(), Cart.class);
+                            Intent intent = getIntent();
+                            Intent topass = new Intent(getApplicationContext(), Cart.class);
 
-                            //topass.putExtra("order", intent.getSerializableExtra("order"));
-                            //startActivity(topass);
+                            topass.putExtra("order", intent.getSerializableExtra("order"));
+                            startActivity(topass);
                             break;
                         case "Recette personalisée":
                             //Open page here
@@ -87,8 +87,8 @@ public class BaseActivity extends AppCompatActivity
                             //Open page here
                             break;
                         case "Mes commandes":
-                            //Intent myOrders = new Intent(getApplicationContext(), MyOrders.class);
-                            //startActivity(myOrders);
+                            Intent myOrders = new Intent(getApplicationContext(), MyOrders.class);
+                            startActivity(myOrders);
                             break;
 
                     }
